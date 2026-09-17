@@ -270,3 +270,24 @@ details li { margin-bottom: 0.3rem; }
 .points li { display: flex; gap: 0.9rem; align-items: flex-start; }
 .points svg { width: 48px; height: 48px; flex: none; color: var(--t5); }
 .closing { border-left: 8px solid var(--t1); }
+
+/* Phone-only adjustments (below 500px) */
+@media (max-width: 499px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+  .big-number { font-size: 2.2rem; }
+  .beside { font-size: 1.1rem; }
+  .sparkline { display: none; }
+  .block { width: 72px; height: 48px; font-size: 0.7rem; }
+  .blocks { gap: 5px; }
+  .tier { padding: 0.9rem 0.9rem; }
+  .tier-summary { display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 1rem; padding: 0.5rem 0.8rem; }
+  .tier-summary .label { white-space: nowrap; }
+  .tier-summary .stat { min-width: 0; }
+  .tier-summary .yield { font-size: 1.4rem; }
+  .tier-summary .coupons { font-size: 0.95rem; white-space: normal; padding-top: 0.45rem; }
+  .tier-desc { font-size: 1rem; margin-bottom: 0.6rem; }
+  .explain-link a { display: block; margin-bottom: 0.3rem; }
+  .explain-link br { display: none; }
+  .tier-head .risk { font-size: 0.8rem; }
+}
