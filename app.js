@@ -153,12 +153,10 @@ function renderBlocks(tier, lot) {
 function renderTier(tier) {
   var el = document.getElementById("tier-" + tier.id);
   if (!el) return;
-  var ic = el.querySelector(".tier-icon");
-  if (ic && !ic.innerHTML) ic.innerHTML = svgIcon(tier.id);
   el.querySelector(".blocks").innerHTML = renderBlocks(tier, ASSUMPTIONS.LOT);
   var lotText;
   if (tier.id === 1) lotText = "Fixed amount: " + fmtSGD(tier.amount) + " (about " + tier.lots.toFixed(1) + " lots)";
-  else lotText = tier.lots + (tier.lots === 1 ? " lot" : " lots") + " = " + fmtSGD(tier.amount) + " (" + fmtPct(tier.share) + " of your portfolio)";
+  else lotText = tier.lots + (tier.lots === 1 ? " lot" : " lots") + " = " + fmtSGD(tier.amount);
   el.querySelector(".lot-line").textContent = lotText;
   el.querySelector(".yield").textContent = fmtPct(tier.yield);
   el.querySelector(".coupons").textContent = fmtSGD(tier.coupons) + " a year";

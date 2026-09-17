@@ -124,105 +124,57 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   color: var(--ink);
 }
 
-/* Waterfall */
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  margin: 0.5rem 0 1rem;
-  padding: 0;
-  list-style: none;
-  font-size: 0.9rem;
-}
-.legend li { display: flex; align-items: center; gap: 0.4rem; }
-.swatch { width: 18px; height: 18px; border-radius: 5px; flex: none; }
+/* Waterfall: a wall of blocks on the left, one short coloured label per tier on the right */
+.wall { display: grid; gap: 0.75rem; margin-bottom: 1.5rem; }
+.tier { display: grid; gap: 0.4rem 1.25rem; align-items: center; }
+@media (min-width: 700px) { .tier { grid-template-columns: minmax(0, 504px) minmax(11rem, 1fr); } }
+.tier-1 { --tc: var(--t1); }
+.tier-2 { --tc: var(--t2); }
+.tier-3 { --tc: var(--t3); }
+.tier-4 { --tc: var(--t4); }
+.tier-5 { --tc: var(--t5); }
 
-.tier {
-  border-radius: var(--radius);
-  padding: 1.1rem 1.25rem;
-  border: 1px solid transparent;
-  box-shadow: var(--shadow);
-  background: #fff;
-}
-.tier-1 { background: var(--t1-bg); border-color: var(--t1); --tc: var(--t1); }
-.tier-2 { background: var(--t2-bg); border-color: var(--t2); --tc: var(--t2); }
-.tier-3 { background: var(--t3-bg); border-color: var(--t3); --tc: var(--t3); }
-.tier-4 { background: var(--t4-bg); border-color: var(--t4); --tc: var(--t4); }
-.tier-5 { background: var(--t5-bg); border-color: var(--t5); --tc: var(--t5); }
-
-.tier-head { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; }
-.tier-head svg { width: 42px; height: 42px; flex: none; color: var(--tc); }
-.tier-head h3 { margin: 0; }
-.tier-head .risk { font-size: 0.9rem; font-weight: 600; color: var(--tc); text-transform: uppercase; letter-spacing: 0.03em; }
-.tier-desc { margin: 0 0 0.9rem; font-size: 1.05rem; }
-
-.tier-body { display: grid; gap: 1rem; }
-@media (min-width: 700px) { .tier-body { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; } }
-
-.blocks { display: flex; flex-wrap: wrap; gap: 8px; }
+.blocks { display: flex; flex-wrap: wrap; gap: 6px; }
 .block {
-  width: 84px;
-  height: 66px;
-  border-radius: 10px;
+  width: 96px;
+  height: 56px;
+  border-radius: 7px;
   background: var(--tc);
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
-  padding: 6px 8px;
+  padding: 5px 8px;
   overflow: hidden;
-  opacity: 0.95;
 }
 .block.partial { position: relative; background: transparent; border: 2px dashed var(--tc); color: var(--tc); justify-content: flex-end; }
-.block.partial .fill {
-  position: absolute; left: 0; top: 0; bottom: 0;
-  background: var(--tc);
-  border-radius: 6px 0 0 6px;
-}
+.block.partial .fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--tc); border-radius: 4px 0 0 4px; }
 .block.partial span { position: relative; }
 .blocks-empty { font-size: 0.9rem; color: var(--muted); font-style: italic; }
-.lot-line { margin: 0.5rem 0 0; font-size: 0.95rem; color: var(--muted); }
 
-.tier-summary {
-  background: rgba(255,255,255,0.7);
-  border-radius: 12px;
-  padding: 0.7rem 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 2rem;
-}
-.tier-summary .stat { min-width: 7rem; }
-.tier-summary .yield { font-size: 1.8rem; line-height: 1.2; font-weight: 700; color: var(--tc); }
-.tier-summary .coupons { font-size: 1.15rem; font-weight: 600; line-height: 1.3; padding-top: 0.35rem; white-space: nowrap; }
-.tier-summary .label { font-size: 0.85rem; color: var(--muted); }
-
-.arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  margin: 0.35rem 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-.arrow svg { width: 18px; height: 26px; }
+.tier-text h3 { margin: 0 0 0.2rem; font-size: 1rem; line-height: 1.25; color: var(--tc); }
+.tier-tag { font-weight: 800; }
+.tier-stats { margin: 0 0 0.1rem; line-height: 1.35; font-size: 0.9rem; }
+.tier-stats strong { font-weight: 700; }
+.tier-stats .yield { color: var(--tc); }
+.lot-line { margin: 0.3rem 0 0.2rem; font-size: 0.9rem; color: var(--muted); }
+.tier-text details { border: none; background: transparent; padding: 0; margin: 0; }
+.tier-text summary { font-weight: 600; color: var(--tc); font-size: 0.9rem; padding: 0.1rem 0; }
+.tier-desc { margin: 0.2rem 0 0.5rem; }
+.risk-line { margin: 0.3rem 0 0; color: var(--tc); }
 
 .inset {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   background: #fff;
   border: 1px solid var(--t5);
   border-radius: 12px;
   padding: 0.9rem 1rem;
 }
-.inset h4 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.inset h4 { margin: 0 0 0.5rem; font-size: 1.05rem; }
 .inset > p { margin-bottom: 0.5rem; }
-.inset details { margin: 0.5rem 0 0; padding: 0.4rem 0.9rem; border-color: var(--t5-bg); background: #fff8f4; }
-.inset details summary { font-size: 0.95rem; }
 .inset ul { margin: 0 0 0.5rem; padding-left: 1.2rem; }
-.inset li { margin-bottom: 0.35rem; }
+.inset li { margin-bottom: 0.35rem; font-size: 0.95rem; }
 
 /* Rules */
 .rules ol { padding-left: 1.4rem; margin: 0; }

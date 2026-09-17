@@ -112,172 +112,86 @@
 
     <section aria-labelledby="waterfall-title">
       <h2 id="waterfall-title">Where your money sits</h2>
-      <p class="small">Each block is S$250,000. Safest at the top, riskiest at the bottom.</p>
-      <ul class="legend" aria-label="Colour legend">
-        <li><span class="swatch" style="background:var(--t1)"></span>Government guaranteed</li>
-        <li><span class="swatch" style="background:var(--t2)"></span>Government guaranteed, tradeable</li>
-        <li><span class="swatch" style="background:var(--t3)"></span>Very safe bank bonds</li>
-        <li><span class="swatch" style="background:var(--t4)"></span>Safe bank bonds, paid after senior</li>
-        <li><span class="swatch" style="background:var(--t5)"></span>Higher income, higher risk. Keep to this size.</li>
-      </ul>
-
-      <section class="tier tier-1" id="tier-1" aria-labelledby="tier-1-title">
-        <div class="tier-head">
-          <span class="tier-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z" fill="currentColor"/><path d="M16 24l6 6 10-12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div>
-            <div class="risk">Tier 1 · Government guaranteed</div>
-            <h3 id="tier-1-title">CPF Retirement Account</h3>
+      <p class="small">Each block is S$250,000. Safest at the top, riskiest at the bottom. Tap a tier to read more.</p>
+      <div class="wall">
+        <section class="tier tier-1" id="tier-1" aria-labelledby="tier-1-title">
+          <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block partial"><div class="fill" style="width:52.6%"></div><span>S$132k</span></div></div>
+          <div class="tier-text">
+            <h3 id="tier-1-title"><span class="tier-tag">Tier 1 (fixed):</span> CPF Retirement Account</h3>
+            <p class="tier-stats">Expected yield <strong class="yield">4.0%</strong><br>Expected coupons <strong class="coupons">S$35,264 a year</strong></p>
+            <details>
+              <summary>More</summary>
+              <p class="risk-line"><strong>Government guaranteed</strong></p>
+              <p class="lot-line">Fixed amount: S$881,600 (about 3.5 lots)</p>
+              <p class="tier-desc">Government pays 4% guaranteed. Money comes back to you monthly.</p>
+            </details>
           </div>
-        </div>
-        <div class="tier-body">
-          <div>
-            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block partial"><div class="fill" style="width:52.6%"></div><span>S$132k</span></div></div>
-            <p class="lot-line">Fixed amount: S$881,600 (about 3.5 lots)</p>
+        </section>
+        <section class="tier tier-2" id="tier-2" aria-labelledby="tier-2-title">
+          <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
+          <div class="tier-text">
+            <h3 id="tier-2-title"><span class="tier-tag">Tier 2 (12% of portfolio):</span> Singapore Government bonds (SGS)</h3>
+            <p class="tier-stats">Expected yield <strong class="yield">2.3%</strong><br>Expected coupons <strong class="coupons">S$11,500 a year</strong></p>
+            <details>
+              <summary>More</summary>
+              <p class="risk-line"><strong>Government guaranteed, tradeable</strong></p>
+              <p class="lot-line">2 lots = S$500,000</p>
+              <p class="tier-desc">Bonds issued by the Singapore Government. As safe as it gets outside CPF, and easy to sell if you ever need to.</p>
+            </details>
           </div>
-          <div class="tier-right">
-          <p class="tier-desc">Government pays 4% guaranteed. Money comes back to you monthly.</p>
-          <div class="tier-summary">
-            <div class="stat"><div class="label">Expected yield</div><div class="yield">4.0%</div></div>
-            <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$35,264 a year</div></div>
+        </section>
+        <section class="tier tier-3" id="tier-3" aria-labelledby="tier-3-title">
+          <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
+          <div class="tier-text">
+            <h3 id="tier-3-title"><span class="tier-tag">Tier 3 (43% of portfolio):</span> Senior bonds from large foreign banks</h3>
+            <p class="tier-stats">Expected yield <strong class="yield">3.1%</strong><br>Expected coupons <strong class="coupons">S$62,000 a year</strong></p>
+            <details>
+              <summary>More</summary>
+              <p class="risk-line"><strong>Very safe bank bonds</strong></p>
+              <p class="lot-line">8 lots = S$2,000,000</p>
+              <p class="tier-desc">Big, well-known foreign banks. Paid back first if anything goes wrong.</p><p class="small"><a href="banks.html">Explainer: Bonds, LACIs, Tier2, and AT1</a></p>
+            </details>
           </div>
+        </section>
+        <section class="tier tier-4" id="tier-4" aria-labelledby="tier-4-title">
+          <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
+          <div class="tier-text">
+            <h3 id="tier-4-title"><span class="tier-tag">Tier 4 (25% of portfolio):</span> Local bank Tier 2 bonds (DBS, OCBC, UOB)</h3>
+            <p class="tier-stats">Expected yield <strong class="yield">3.2%</strong><br>Expected coupons <strong class="coupons">S$32,000 a year</strong></p>
+            <details>
+              <summary>More</summary>
+              <p class="risk-line"><strong>Safe bank bonds, paid after senior</strong></p>
+              <p class="lot-line">4 lots = S$1,000,000</p>
+              <p class="tier-desc">DBS, OCBC and UOB. Very safe, slightly higher income, paid back after senior bonds.</p><p class="small"><a href="banks.html">Explainer: Bonds, LACIs, Tier2, and AT1</a></p>
+            </details>
           </div>
-        </div>
-      </section>
-
-      <div class="arrow" aria-hidden="true">
-        <svg viewBox="0 0 18 26"><path d="M9 2v20M3 16l6 7 6-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Safest</span>
-      </div>
-
-      <section class="tier tier-2" id="tier-2" aria-labelledby="tier-2-title">
-        <div class="tier-head">
-          <span class="tier-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20L24 8l18 12H6z" fill="currentColor"/><rect x="10" y="22" width="5" height="14" fill="currentColor"/><rect x="21.5" y="22" width="5" height="14" fill="currentColor"/><rect x="33" y="22" width="5" height="14" fill="currentColor"/><rect x="6" y="38" width="36" height="5" fill="currentColor"/></svg></span>
-          <div>
-            <div class="risk">Tier 2 · Government guaranteed, tradeable</div>
-            <h3 id="tier-2-title">Singapore Government bonds (SGS)</h3>
+        </section>
+        <section class="tier tier-5" id="tier-5" aria-labelledby="tier-5-title">
+          <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
+          <div class="tier-text">
+            <h3 id="tier-5-title"><span class="tier-tag">Tier 5 (20% of portfolio):</span> Bank perpetual bonds (AT1)</h3>
+            <p class="tier-stats">Expected yield <strong class="yield">4.5%</strong><br>Expected coupons <strong class="coupons">S$33,750 a year</strong></p>
+            <details>
+              <summary>More</summary>
+              <p class="risk-line"><strong>Higher income, higher risk. Keep to this size.</strong></p>
+              <p class="lot-line">3 lots = S$750,000</p>
+              <p class="tier-desc">Pays the most, but the bank can skip payments or not pay you back on time. Keep this to one fifth.</p><p class="small"><a href="banks.html">Explainer: Bonds, LACIs, Tier2, and AT1</a></p>
+            <div class="inset">
+              <h4>The TD bond you already own</h4>
+              <p>Toronto-Dominion Bank perpetual. Pays 5.70% a year on face value, in Singapore dollars, every six months. The bank can choose to repay you from 31 July 2029.</p>
+              <p id="td-yield-line">JX will fill this in from your contract note.</p>
+              <ul>
+                <li>Toronto-Dominion Bank. Pays 5.70% a year on face value, in Singapore dollars, every six months.</li>
+                <li>The bank can choose to repay you on 31 July 2029. If it does not, the rate resets to a Singapore interest rate plus 2.65%, and it can repay you at later dates.</li>
+                <li>TD can skip a payment, but if it does, it cannot pay its own shareholders until it pays you again.</li>
+                <li>If TD were ever failing, this bond turns into TD shares rather than disappearing.</li>
+                <li>TD's capital cushion was 14.3% at April 2026, well above what regulators require.</li>
+              </ul>
+              <p class="tiny">Source: TD pricing supplement dated 8 July 2024 (Series 2023-9) and TD's programme prospectus, July 2026.</p>
+            </div>
+            </details>
           </div>
-        </div>
-        <div class="tier-body">
-          <div>
-            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
-            <p class="lot-line">2 lots = S$500,000 (12.0% of your portfolio)</p>
-          </div>
-          <div class="tier-right">
-          <p class="tier-desc">Bonds issued by the Singapore Government. As safe as it gets outside CPF, and easy to sell if you ever need to.</p>
-          <div class="tier-summary">
-            <div class="stat"><div class="label">Expected yield</div><div class="yield">2.3%</div></div>
-            <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$11,500 a year</div></div>
-          </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="arrow" aria-hidden="true">
-        <svg viewBox="0 0 18 26"><path d="M9 2v20M3 16l6 7 6-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Very safe</span>
-      </div>
-
-      <section class="tier tier-3" id="tier-3" aria-labelledby="tier-3-title">
-        <div class="tier-head">
-          <span class="tier-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="3" fill="currentColor"/><rect x="14" y="12" width="6" height="6" fill="#fff"/><rect x="28" y="12" width="6" height="6" fill="#fff"/><rect x="14" y="22" width="6" height="6" fill="#fff"/><rect x="28" y="22" width="6" height="6" fill="#fff"/><rect x="20" y="32" width="8" height="10" fill="#fff"/></svg></span>
-          <div>
-            <div class="risk">Tier 3 · Very safe bank bonds</div>
-            <h3 id="tier-3-title">Senior bonds from large foreign banks</h3>
-          </div>
-        </div>
-        <div class="tier-body">
-          <div>
-            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
-            <p class="lot-line">8 lots = S$2,000,000 (43.0% of your portfolio)</p>
-          </div>
-          <div class="tier-right">
-          <p class="tier-desc">Big, well-known foreign banks. Paid back first if anything goes wrong.</p>
-          <div class="tier-summary">
-            <div class="stat"><div class="label">Expected yield</div><div class="yield">3.1%</div></div>
-            <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$62,000 a year</div></div>
-          </div>
-          </div>
-        </div>
-        <p class="small"><a href="banks.html">Explainer: Bonds, LACIs, Tier2, and AT1</a></p>
-      </section>
-
-      <div class="arrow" aria-hidden="true">
-        <svg viewBox="0 0 18 26"><path d="M9 2v20M3 16l6 7 6-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Safe</span>
-      </div>
-
-      <section class="tier tier-4" id="tier-4" aria-labelledby="tier-4-title">
-        <div class="tier-head">
-          <span class="tier-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="28" rx="4" fill="currentColor"/><rect x="6" y="17" width="36" height="5" fill="#fff"/><rect x="12" y="27" width="10" height="4" fill="#fff"/></svg></span>
-          <div>
-            <div class="risk">Tier 4 · Safe bank bonds, paid after senior</div>
-            <h3 id="tier-4-title">Local bank Tier 2 bonds (DBS, OCBC, UOB)</h3>
-          </div>
-        </div>
-        <div class="tier-body">
-          <div>
-            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
-            <p class="lot-line">4 lots = S$1,000,000 (25.0% of your portfolio)</p>
-          </div>
-          <div class="tier-right">
-          <p class="tier-desc">DBS, OCBC and UOB. Very safe, slightly higher income, paid back after senior bonds.</p>
-          <div class="tier-summary">
-            <div class="stat"><div class="label">Expected yield</div><div class="yield">3.2%</div></div>
-            <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$32,000 a year</div></div>
-          </div>
-          </div>
-        </div>
-        <p class="small"><a href="banks.html">Explainer: Bonds, LACIs, Tier2, and AT1</a></p>
-      </section>
-
-      <div class="arrow" aria-hidden="true">
-        <svg viewBox="0 0 18 26"><path d="M9 2v20M3 16l6 7 6-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Careful</span>
-      </div>
-
-      <section class="tier tier-5" id="tier-5" aria-labelledby="tier-5-title">
-        <div class="tier-head">
-          <span class="tier-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="currentColor"/><path d="M24 14v20M18 20h9a4 4 0 010 8h-6a4 4 0 000 8h9" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span>
-          <div>
-            <div class="risk">Tier 5 · Higher income, higher risk</div>
-            <h3 id="tier-5-title">Bank perpetual bonds (AT1)</h3>
-          </div>
-        </div>
-        <div class="tier-body">
-          <div>
-            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
-            <p class="lot-line">3 lots = S$750,000 (20.0% of your portfolio)</p>
-          </div>
-          <div class="tier-right">
-          <p class="tier-desc">Pays the most, but the bank can skip payments or not pay you back on time. Keep this to one fifth.</p>
-          <div class="tier-summary">
-            <div class="stat"><div class="label">Expected yield</div><div class="yield">4.5%</div></div>
-            <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$33,750 a year</div></div>
-          </div>
-          </div>
-        </div>
-        <div class="inset">
-          <h4>The TD bond you already own</h4>
-          <p>Toronto-Dominion Bank perpetual. Pays 5.70% a year on face value, in Singapore dollars, every six months. The bank can choose to repay you from 31 July 2029.</p>
-          <p id="td-yield-line">JX will fill this in from your contract note.</p>
-          <details>
-            <summary>More about this bond</summary>
-            <ul>
-              <li>Toronto-Dominion Bank. Pays 5.70% a year on face value, in Singapore dollars, every six months.</li>
-              <li>The bank can choose to repay you on 31 July 2029. If it does not, the rate resets to a Singapore interest rate plus 2.65%, and it can repay you at later dates.</li>
-              <li>TD can skip a payment, but if it does, it cannot pay its own shareholders until it pays you again.</li>
-              <li>If TD were ever failing, this bond turns into TD shares rather than disappearing.</li>
-              <li>TD's capital cushion was 14.3% at April 2026, well above what regulators require.</li>
-            </ul>
-            <p class="tiny">Source: TD pricing supplement dated 8 July 2024 (Series 2023-9) and TD's programme prospectus, July 2026.</p>
-          </details>
-          <p class="small" style="margin:0.5rem 0 0"><a href="banks.html">Explainer: Bonds, LACIs, Tier2, and AT1</a></p>
-        </div>
-      </section>
-
-      <div class="arrow" aria-hidden="true">
-        <svg viewBox="0 0 18 26"><path d="M9 2v20M3 16l6 7 6-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>One fifth, no more</span>
+        </section>
       </div>
     </section>
 
@@ -295,7 +209,8 @@
     </section>
 
     <details id="assumptions">
-      <summary>Assumptions we used</summary>
+      <summary>More</summary>
+              <p class="risk-line"><strong>Assumptions we used</strong></p>
       <p class="small">Yields are September 2026 working estimates until the bank quotes real prices. Update them in <code>app.js</code>.</p>
       <ul id="assumption-yields">
         <li>Tier 1: 4.0% — CPF Retirement Account interest, guaranteed by the Government</li>
