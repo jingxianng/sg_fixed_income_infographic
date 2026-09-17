@@ -157,7 +157,10 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .tier-desc { margin: 0 0 0.9rem; font-size: 1.05rem; }
 
 .tier-body { display: grid; gap: 1rem; }
-@media (min-width: 700px) { .tier-body { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; } }
+@media (min-width: 700px) { .tier-body { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: stretch; } }
+.tier-right { display: flex; flex-direction: column; }
+.tier-right .tier-summary { margin-top: auto; }
+.explain-link { margin: 0.4rem 0 0; }
 
 .blocks { display: flex; flex-wrap: wrap; gap: 8px; }
 .block {
