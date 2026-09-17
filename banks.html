@@ -92,16 +92,13 @@
           <h2 id="b3b">4. LACIs</h2>
           <p>Short for "loss-absorbing capacity instruments", the name our regulator uses. Also senior bonds: a fixed payment and a fixed date that the bank cannot skip. The one difference: if the bank were failing, the regulator can use these bonds to absorb losses before depositors and ordinary senior bonds are touched. For that they pay a little more, and many of the foreign bank bonds you buy are this kind.</p>
         </div>
-        <svg class="figure" viewBox="0 0 320 160" role="img" aria-label="Ordinary senior bonds sit above LACIs, which sit above Tier 2">
-          <rect x="20" y="14" width="200" height="38" rx="8" fill="#1f5fa8"/>
-          <text x="120" y="39" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Senior (ordinary)</text>
-          <rect x="20" y="60" width="200" height="38" rx="8" fill="#4a7fc1"/>
-          <text x="120" y="85" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Senior LACIs</text>
-          <rect x="20" y="106" width="200" height="38" rx="8" fill="#a35f00"/>
-          <text x="120" y="131" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Tier 2</text>
-          <text x="270" y="39" text-anchor="middle" font-size="13" font-weight="600" fill="#4d5966">paid 1st</text>
-          <text x="270" y="85" text-anchor="middle" font-size="13" font-weight="600" fill="#4d5966">paid 2nd</text>
-          <text x="270" y="131" text-anchor="middle" font-size="13" font-weight="600" fill="#4d5966">paid 3rd</text>
+        <svg class="figure" viewBox="0 0 320 160" role="img" aria-label="Ordinary senior bonds are paid before LACIs">
+          <rect x="20" y="30" width="200" height="44" rx="8" fill="#1f5fa8"/>
+          <text x="120" y="58" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Senior (ordinary)</text>
+          <rect x="20" y="90" width="200" height="44" rx="8" fill="#4a7fc1"/>
+          <text x="120" y="118" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Senior LACIs</text>
+          <text x="270" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#4d5966">paid 1st</text>
+          <text x="270" y="118" text-anchor="middle" font-size="13" font-weight="600" fill="#4d5966">paid 2nd</text>
         </svg>
       </div>
     </section>
@@ -113,14 +110,21 @@
           <p>Also a fixed payment and a fixed date. The bank cannot skip payments. The only difference from senior: if the bank were failing, you would be paid after senior bondholders. That is why it pays a little more.</p>
           <p>These are usually issued for 10 years, with the bank allowed to repay you early after 5 years. Bankers write this as "10NC5". Singapore banks have always repaid at the 5-year point, and even if one did not, it must repay you at 10 years.</p>
         </div>
-        <svg class="figure" viewBox="0 0 320 160" role="img" aria-label="Senior bonds are paid first, then Tier 2 bonds, with a slightly larger coupon">
-          <rect x="20" y="30" width="130" height="44" rx="8" fill="#1f5fa8"/>
-          <text x="85" y="58" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Senior: paid 1st</text>
-          <rect x="20" y="90" width="130" height="44" rx="8" fill="#a35f00"/>
-          <text x="85" y="118" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Tier 2: paid 2nd</text>
-          <text x="235" y="60" text-anchor="middle" font-size="22" font-weight="700" fill="#1f5fa8">3.1%</text>
-          <text x="235" y="120" text-anchor="middle" font-size="26" font-weight="700" fill="#a35f00">3.2%</text>
-          <text x="235" y="150" text-anchor="middle" font-size="12" fill="#4d5966">repaid by year 10 at the latest</text>
+        <svg class="figure" viewBox="0 0 320 160" role="img" aria-label="Timeline of a 10NC5 Tier 2 bond: the bank may repay at year 5 and must repay at year 10">
+          <line x1="30" y1="80" x2="290" y2="80" stroke="#a35f00" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="30" cy="80" r="9" fill="#a35f00"/>
+          <circle cx="160" cy="80" r="9" fill="#fff" stroke="#a35f00" stroke-width="4"/>
+          <circle cx="290" cy="80" r="9" fill="#a35f00"/>
+          <g font-size="13" font-weight="600" fill="#1d232a" text-anchor="middle">
+            <text x="30" y="52">Buy</text>
+            <text x="160" y="52">Year 5</text>
+            <text x="290" y="52">Year 10</text>
+          </g>
+          <g font-size="12" fill="#4d5966" text-anchor="middle">
+            <text x="160" y="110">bank may repay</text>
+            <text x="160" y="126">(always has so far)</text>
+            <text x="290" y="110">must repay</text>
+          </g>
         </svg>
       </div>
     </section>
