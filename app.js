@@ -105,6 +105,23 @@ function summariseProjection(rows, startWealth) {
     firstDeficit: firstDeficit, runsOut: runsOut };
 }
 
+// Plain-language sentence for the ten-year card. Distinguishes whether the
+// money grows or shrinks in today's money, not just whether spending exceeds income.
+function verdictText(s, a) {
+  a = a || ASSUMPTIONS;
+  if (s.runsOut !== null) {
+    return "At this level of spending, the money runs out in year " + s.runsOut + ". Talk to " + a.PERSON + ".";
+  }
+  var grows = s.share >= 1;
+  if (s.firstDeficit === null) {
+    return grows
+      ? "You are spending less than you earn. Your money grows even after cost-of-living increases."
+      : "You are spending less than you earn, but not by enough to keep up with cost-of-living increases. In today's money your savings shrink slowly.";
+  }
+  return "From year " + s.firstDeficit + " your spending will be more than your income. That is fine — it comes out of bonds as they are repaid." +
+    (grows ? " Your money still keeps up with cost-of-living increases." : " In today's money your savings shrink slowly.");
+}
+
 // ---------- rendering ----------
 
 function svgIcon(id) {
@@ -191,14 +208,8 @@ function render() {
   var card = document.getElementById("ten-year-card");
   var verdict = document.getElementById("verdict");
   card.classList.remove("danger");
-  if (s.runsOut !== null) {
-    card.classList.add("danger");
-    verdict.textContent = "At this level of spending, the money runs out in year " + s.runsOut + ". Talk to " + a.PERSON + ".";
-  } else if (s.firstDeficit !== null) {
-    verdict.textContent = "From year " + s.firstDeficit + " your spending will be more than your income. That is fine — it comes out of bonds as they are repaid.";
-  } else {
-    verdict.textContent = "You are spending less than you earn. Your money grows even after cost-of-living increases.";
-  }
+  if (s.runsOut !== null) card.classList.add("danger");
+  verdict.textContent = verdictText(s, a);
   renderSparkline(rows, alloc.total, inputs.col);
 
   // Waterfall
@@ -263,5 +274,5 @@ if (typeof document !== "undefined") {
 }
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { ASSUMPTIONS: ASSUMPTIONS, allocate: allocate, projectTenYears: projectTenYears,
-    summariseProjection: summariseProjection, svgIcon: svgIcon, fmtSGD: fmtSGD, fmtPct: fmtPct };
+    summariseProjection: summariseProjection, verdictText: verdictText, svgIcon: svgIcon, fmtSGD: fmtSGD, fmtPct: fmtPct };
 }
