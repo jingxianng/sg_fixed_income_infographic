@@ -267,6 +267,8 @@ details li { margin-bottom: 0.3rem; }
 .stack .row.t5 { background: var(--t5); }
 .stack .row.share { background: #e4e8ec; color: var(--ink); }
 .stack .row small { display: block; font-weight: 500; font-size: 0.9rem; opacity: 0.95; }
+.levels { padding-left: 1.2rem; margin: 0; }
+.levels li { margin-bottom: 0.6rem; }
 .points { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
 .points li { display: flex; gap: 0.9rem; align-items: flex-start; }
 .points svg { width: 48px; height: 48px; flex: none; color: var(--t5); }

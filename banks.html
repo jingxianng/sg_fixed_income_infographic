@@ -71,51 +71,34 @@
     <section class="card" aria-labelledby="b3" style="border-left: 8px solid var(--t3)">
       <div class="section-grid">
         <div>
-          <h2 id="b3">3. Senior bonds</h2>
-          <p>The bank promises a fixed payment and a fixed repayment date. It cannot skip or delay either: missing one would be a default. These are the safest bank bonds and most of your money sits here.</p>
-          <p>There are two kinds. Ordinary senior bonds, which bankers call "senior preferred", and LACIs, short for "loss-absorbing capacity instruments", the name our regulator uses. If the bank were failing, the regulator can use LACIs to absorb losses before depositors and ordinary senior bonds are touched. For that they pay a little more, and many of the foreign bank bonds you buy are this kind.</p>
+          <h2 id="b3">3. Bonds</h2>
+          <p>Fixed payments on fixed dates. The bank cannot skip a coupon without defaulting. Three levels, paid in this order:</p>
+          <ul class="levels">
+            <li><strong>Senior bonds.</strong> Ordinary bank bonds, which bankers call "senior preferred". Paid first among bondholders and never used to absorb losses.</li>
+            <li><strong>LACIs.</strong> Also senior, but if the bank were failing the regulator can use them to absorb losses before depositors and ordinary senior bonds. Many of the foreign bank bonds you buy are this kind.</li>
+            <li><strong>Tier 2 bonds.</strong> Paid after both kinds of senior bond, so they pay a little more. Usually issued for 10 years with the bank allowed to repay after 5, which Singapore banks have always done.</li>
+          </ul>
         </div>
-        <svg class="figure" viewBox="0 0 320 170" role="img" aria-label="Both kinds of senior bond have a fixed payment and fixed date; ordinary senior bonds are paid before LACIs">
-          <rect x="20" y="20" width="200" height="44" rx="8" fill="#1f5fa8"/>
-          <text x="120" y="48" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Senior (ordinary)</text>
-          <rect x="20" y="76" width="200" height="44" rx="8" fill="#4a7fc1"/>
-          <text x="120" y="104" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Senior LACIs</text>
-          <text x="270" y="48" text-anchor="middle" font-size="13" font-weight="600" fill="#4d5966">paid 1st</text>
-          <text x="270" y="104" text-anchor="middle" font-size="13" font-weight="600" fill="#4d5966">paid 2nd</text>
-          <text x="120" y="150" text-anchor="middle" font-size="13" font-weight="600" fill="#1f5fa8">Both: fixed payment, fixed date, no skipping</text>
-        </svg>
-      </div>
-    </section>
-
-    <section class="card" aria-labelledby="b4" style="border-left: 8px solid var(--t4)">
-      <div class="section-grid">
-        <div>
-          <h2 id="b4">4. Tier 2 bonds</h2>
-          <p>Also a fixed payment and a fixed date. The bank cannot skip payments. The only difference from senior: if the bank were failing, you would be paid after senior bondholders. That is why it pays a little more.</p>
-          <p>These are usually issued for 10 years, with the bank allowed to repay you early after 5 years. Bankers write this as "10NC5". Singapore banks have always repaid at the 5-year point, and even if one did not, it must repay you at 10 years.</p>
-        </div>
-        <svg class="figure" viewBox="0 0 320 160" role="img" aria-label="Timeline of a 10NC5 Tier 2 bond: the bank may repay at year 5 and must repay at year 10">
-          <line x1="30" y1="80" x2="290" y2="80" stroke="#a35f00" stroke-width="6" stroke-linecap="round"/>
-          <circle cx="30" cy="80" r="9" fill="#a35f00"/>
-          <circle cx="160" cy="80" r="9" fill="#fff" stroke="#a35f00" stroke-width="4"/>
-          <circle cx="290" cy="80" r="9" fill="#a35f00"/>
-          <g font-size="13" font-weight="600" fill="#1d232a" text-anchor="middle">
-            <text x="30" y="52">Buy</text>
-            <text x="160" y="52">Year 5</text>
-            <text x="290" y="52">Year 10</text>
+        <svg class="figure" viewBox="0 0 320 200" role="img" aria-label="Senior bonds, LACIs and Tier 2 bonds, paid in that order; all have fixed coupons that cannot be skipped">
+          <rect x="20" y="16" width="200" height="44" rx="8" fill="#1f5fa8"/>
+          <text x="120" y="44" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Senior bonds</text>
+          <rect x="20" y="70" width="200" height="44" rx="8" fill="#4a7fc1"/>
+          <text x="120" y="98" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">LACIs</text>
+          <rect x="20" y="124" width="200" height="44" rx="8" fill="#a35f00"/>
+          <text x="120" y="152" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Tier 2 bonds</text>
+          <g font-size="13" font-weight="600" fill="#4d5966" text-anchor="middle">
+            <text x="270" y="44">paid 1st</text>
+            <text x="270" y="98">paid 2nd</text>
+            <text x="270" y="152">paid 3rd</text>
           </g>
-          <g font-size="12" fill="#4d5966" text-anchor="middle">
-            <text x="160" y="110">bank may repay</text>
-            <text x="160" y="126">(always has so far)</text>
-            <text x="290" y="110">must repay</text>
-          </g>
+          <text x="160" y="192" text-anchor="middle" font-size="13" font-weight="600" fill="#1f5fa8">All three: coupons cannot be skipped</text>
         </svg>
       </div>
     </section>
 
     <section class="card" aria-labelledby="b5" style="border-left: 8px solid var(--t5)">
-      <h2 id="b5">5. Perpetual bonds (AT1)</h2>
-      <p class="small">"Perpetual" means the bond has no fixed end date. Bankers call bank perpetuals "AT1", short for "additional Tier 1 capital". Unlike a 10NC5 Tier 2 bond, there is no year-10 backstop: the bank can repay at year 5 or at later dates, but it never has to.</p>
+      <h2 id="b5">4. Perpetual bonds (AT1)</h2>
+      <p class="small">"Perpetual" means the bond has no fixed end date. Bankers call bank perpetuals "AT1", short for "additional Tier 1 capital". Unlike the bonds above, there is no final repayment date: the bank can repay at year 5 or at later dates, but it never has to.</p>
       <ul class="points">
         <li>
           <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="currentColor"/><rect x="16" y="15" width="5" height="18" rx="1.5" fill="#fff"/><rect x="27" y="15" width="5" height="18" rx="1.5" fill="#fff"/></svg>
