@@ -3,15 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our Bond Plan</title>
+  <title>Fixed Income and Portfolio allocation</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="wrap">
     <header class="site-header">
       <div class="kicker">For Mum and Dad</div>
-      <h1>Our Bond Plan</h1>
-      <p class="lead">How your savings are arranged, from the safest at the top to the riskiest at the bottom, and how much income they give you each year.</p>
+      <h1>Fixed Income and Portfolio allocation</h1>
     </header>
 
     <section class="card" aria-labelledby="inputs-title">
@@ -70,9 +69,8 @@
           <p class="help tiny">Economists call this inflation.</p>
         </div>
         <div class="field">
-          <label for="spending">How much you spend in a year (S$)</label>
+          <label for="spending">Annual spending</label>
           <input id="spending" type="text" inputmode="numeric" autocomplete="off" value="150,000" data-value="150000">
-          <p class="help small">Everything you spend, before counting any income.</p>
         </div>
       </div>
     </section>
@@ -83,9 +81,8 @@
         <span class="big-number" id="income">S$174,514</span>
         <span class="beside" id="yield">(3.4% yield)</span>
       </div>
-      <p class="small">This is the coupons and CPF payouts you receive. It does not include selling anything.</p>
-      <p class="small">To buy the same things in 10 years you will need about <strong id="future-spend">S$182,849</strong> a year.
-        The ladder below is designed to grow with you — <a href="ladder.html">see how</a>.</p>
+      <p class="small">This is the coupons and CPF payouts you receive.</p>
+      <p class="small">To buy the same things in 10 years you will need about <strong id="future-spend">S$182,849</strong> a year.</p>
     </section>
 
     <section class="card result-card ten-year" id="ten-year-card" aria-labelledby="ten-title">
@@ -135,7 +132,7 @@
             <p class="lot-line">Fixed amount: S$881,600 (about 3.5 lots)</p>
           </div>
           <div class="tier-right">
-          <p class="tier-desc">Government pays 4% guaranteed. Money comes back to you monthly.</p>
+          <p class="tier-desc">Government pays 4% guaranteed.</p>
           <div class="tier-summary">
             <div class="stat"><div class="label">Expected yield</div><div class="yield">4.0%</div></div>
             <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$35,264 a year</div></div>
@@ -163,7 +160,7 @@
             <p class="lot-line">2 lots = S$500,000 (12.0% of your portfolio)</p>
           </div>
           <div class="tier-right">
-          <p class="tier-desc">Bonds issued by the Singapore Government. As safe as it gets outside CPF, and easy to sell if you ever need to.</p>
+          <p class="tier-desc">Singapore Government Bonds. Safe, liquid.</p>
           <div class="tier-summary">
             <div class="stat"><div class="label">Expected yield</div><div class="yield">2.3%</div></div>
             <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$11,500 a year</div></div>
@@ -189,10 +186,10 @@
           <div>
             <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
             <p class="lot-line">8 lots = S$2,000,000 (43.0% of your portfolio)</p>
-            <p class="small explain-link"><a href="banks.html">Explainer: Bonds, LACIs, Tier2, and AT1</a></p>
+            <p class="small explain-link"><a href="ladder.html">How does the ladder work?</a><br><a href="banks.html">Explainer: Bonds, LACIs, Tier2, and AT1</a></p>
           </div>
           <div class="tier-right">
-          <p class="tier-desc">Big, well-known foreign banks. Paid back first if anything goes wrong.</p>
+          <p class="tier-desc">Big foreign banks. Paid back first if anything goes wrong.</p>
           <div class="tier-summary">
             <div class="stat"><div class="label">Expected yield</div><div class="yield">3.1%</div></div>
             <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$62,000 a year</div></div>
@@ -249,7 +246,7 @@
             <p class="lot-line">3 lots = S$750,000 (20.0% of your portfolio)</p>
           </div>
           <div class="tier-right">
-          <p class="tier-desc">Pays the most, but the bank can skip payments or not pay you back on time. Keep this to one fifth.</p>
+          <p class="tier-desc">Pays the most, but the bank can skip payments or not pay back on time.</p>
           <div class="tier-summary">
             <div class="stat"><div class="label">Expected yield</div><div class="yield">4.5%</div></div>
             <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$33,750 a year</div></div>
@@ -287,7 +284,7 @@
         <li>Never sell a bond because its price fell. You still get every coupon.</li>
         <li>Before buying any bond, ask a second bank for a price on the same bond. Only deal if the prices are close.
           <span class="why">Why: banks add a hidden margin to bond prices; a second quote shows you how much.</span></li>
-        <li>Ask for the yield to call (or yield to maturity), not the coupon rate. The coupon is what the bond pays on 100; the yield is what you actually earn on the price you pay. Buy on the yield.
+        <li>Ask for the yield to call (or yield to maturity), not the coupon rate. The coupon is what the bond pays on 100; the yield is what you actually earn on the price you pay.
           <span class="why">Why: a 5.7% coupon bought at 104 earns about 4.5% a year to the call date.</span></li>
         <li>Keep the bottom step at one fifth. Only buy more perpetuals when a local bank issues a new one, never at a price above 100.</li>
         <li>Each year, check your spending against the cost-of-living line above.</li>
