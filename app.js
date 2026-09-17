@@ -74,16 +74,18 @@ function allocate(portfolio, a) {
 
 // ---------- ten-year projection ----------
 
-// inputs: { portfolio, col, spending }   assumptions: ASSUMPTIONS
-// Returns an array of 10 rows: { year, start, income, spending, end, real }
+// inputs: { portfolio, col, spending, years }   assumptions: ASSUMPTIONS
+// Returns one row per year: { year, start, income, spending, end, real }.
+// inputs.years defaults to ASSUMPTIONS.PROJECTION_YEARS (10).
 function projectTenYears(inputs, assumptions) {
   var a = assumptions || ASSUMPTIONS;
+  var years = inputs.years || a.PROJECTION_YEARS;
   var alloc = allocate(inputs.portfolio, a);
   var w = alloc.total;
   var y = alloc.yield;
   var g = inputs.col;
   var rows = [];
-  for (var t = 1; t <= a.PROJECTION_YEARS; t++) {
+  for (var t = 1; t <= years; t++) {
     var income = w * y;
     var spending = inputs.spending * Math.pow(1 + g, t - 1);
     var end = Math.max(0, w + income - spending);
@@ -186,7 +188,9 @@ function readInputs() {
   var col = Number(document.getElementById("col").value);
   var spendEl = document.getElementById("spending");
   var spending = Number(spendEl.getAttribute("data-value") || 0);
-  return { portfolio: portfolio, col: col, spending: spending };
+  var yearsEl = document.getElementById("years");
+  var years = yearsEl ? Number(yearsEl.value) : ASSUMPTIONS.PROJECTION_YEARS;
+  return { portfolio: portfolio, col: col, spending: spending, years: years };
 }
 
 function render() {
@@ -203,6 +207,7 @@ function render() {
   // Ten-year card
   var rows = projectTenYears(inputs, a);
   var s = summariseProjection(rows, alloc.total);
+  Array.prototype.forEach.call(document.querySelectorAll(".years-word"), function (el) { el.textContent = inputs.years; });
   document.getElementById("real").textContent = fmtSGD(s.real);
   document.getElementById("real-share").textContent = "(" + fmtPct(s.share) + " of what you have now)";
   var card = document.getElementById("ten-year-card");
@@ -265,6 +270,7 @@ function init() {
   }
   document.getElementById("portfolio").addEventListener("change", render);
   document.getElementById("col").addEventListener("change", render);
+  document.getElementById("years").addEventListener("change", render);
   wireSpending();
   render();
 }

@@ -113,6 +113,17 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 @media (min-width: 700px) { .ten-year-grid { grid-template-columns: 1fr auto; } }
 .sparkline { width: 100%; max-width: 260px; height: 70px; display: block; }
 
+.title-with-select { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.title-with-select select {
+  font: inherit;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border: 2px solid #8a949e;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+}
+
 /* Waterfall */
 .legend {
   display: flex;

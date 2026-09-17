@@ -63,3 +63,10 @@ test("verdict distinguishes growing and shrinking real value", () => {
   assert.match(verdictText({ runsOut: null, firstDeficit: 10, share: 0.84 }), /From year 10 .* shrink slowly/);
   assert.match(verdictText({ runsOut: null, firstDeficit: 9, share: 1.02 }), /From year 9 .* still keeps up/);
 });
+
+test("projection honours the years input", () => {
+  const rows = projectTenYears({ portfolio: 4250000, col: 0.02, spending: 150000, years: 25 }, ASSUMPTIONS);
+  assert.equal(rows.length, 25);
+  assert.equal(rows[24].year, 25);
+  assert.equal(projectTenYears({ portfolio: 4250000, col: 0.02, spending: 150000 }, ASSUMPTIONS).length, 10);
+});

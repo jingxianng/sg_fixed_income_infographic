@@ -81,7 +81,13 @@
     </section>
 
     <section class="card result-card ten-year" id="ten-year-card" aria-labelledby="ten-title">
-      <h2 id="ten-title">Your money in 10 years</h2>
+      <h2 id="ten-title" class="title-with-select"><label for="years">Your money in</label>
+        <select id="years" aria-label="Number of years">
+          <option value="10" selected>10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+        </select> years</h2>
       <div class="ten-year-grid">
         <div>
           <p class="small" style="margin:0;font-weight:600">In today's money</p>
@@ -89,10 +95,10 @@
             <span class="big-number" id="real">S$4,316,632</span>
             <span class="beside" id="real-share">(84.1% of what you have now)</span>
           </div>
-          <p class="small">This is what your bonds and CPF would be worth in 10 years, after paying for your spending each year, measured in today's prices.</p>
+          <p class="small">This is what your bonds and CPF would be worth in <span class="years-word">10</span> years, after paying for your spending each year, measured in today's prices.</p>
           <p id="verdict">From year 10 your spending will be more than your income. That is fine — it comes out of bonds as they are repaid. In today's money your savings shrink slowly.</p>
         </div>
-        <svg class="sparkline" id="sparkline" viewBox="0 0 260 70" role="img" aria-label="Your money in today's dollars over the next 10 years"></svg>
+        <svg class="sparkline" id="sparkline" viewBox="0 0 260 70" role="img" aria-label="Your money in today's dollars over the coming years"></svg>
       </div>
     </section>
 
