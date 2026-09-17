@@ -262,6 +262,7 @@ details li { margin-bottom: 0.3rem; }
 .stack-caption { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: var(--muted); margin: 0.4rem 0.2rem 0; }
 .stack .row.plain { background: #4d5966; }
 .stack .row.t3 { background: var(--t3); }
+.stack .row.t3b { background: #4a7fc1; }
 .stack .row.t4 { background: var(--t4); }
 .stack .row.t5 { background: var(--t5); }
 .stack .row.share { background: #e4e8ec; color: var(--ink); }

@@ -11,7 +11,7 @@
     <a class="back" href="index.html">&larr; Back to the plan</a>
     <header class="site-header">
       <h1>How bank bonds work</h1>
-      <p class="lead">Who gets paid first, what the different bank bonds are, and why the banks we use are safe.</p>
+      <p class="lead">Who gets paid first, what the different kinds of bank bonds are (senior, LACIs, Tier 2 and AT1), and why the banks we use are safe.</p>
     </header>
 
     <section class="card" aria-labelledby="b1">
@@ -22,11 +22,12 @@
           <p class="small">The colours match the tiers on the main page.</p>
         </div>
         <div>
-          <div class="stack" role="img" aria-label="Order of repayment from first to last: depositors, senior bonds, Tier 2 bonds, perpetual bonds, shareholders">
+          <div class="stack" role="img" aria-label="Order of repayment from first to last: depositors, senior bonds, senior non-preferred bonds (LACIs), Tier 2 bonds, perpetual bonds (AT1), shareholders">
             <div class="row plain">Depositors <small>Paid first</small></div>
             <div class="row t3">Senior bonds <small>Tier 3 on the plan · most of your money</small></div>
-            <div class="row t4">Tier 2 bonds <small>Tier 4 on the plan</small></div>
-            <div class="row t5">Perpetual bonds <small>Tier 5 on the plan · one fifth, no more</small></div>
+            <div class="row t3b">LACIs <small>Senior bonds that absorb losses first · also Tier 3</small></div>
+            <div class="row t4">Tier 2 bonds <small>Tier 4 on the plan · usually 10NC5</small></div>
+            <div class="row t5">Perpetual bonds (AT1) <small>Tier 5 on the plan · one fifth, no more</small></div>
             <div class="row share">Shareholders <small>Lose first</small></div>
           </div>
           <div class="stack-caption"><span>&uarr; Paid first</span><span>Paid last &darr;</span></div>
@@ -71,7 +72,7 @@
       <div class="section-grid">
         <div>
           <h2 id="b3">3. Senior bonds</h2>
-          <p>The bank promises a fixed payment and a fixed repayment date. It cannot skip or delay either. These are the safest bank bonds and most of your money sits here.</p>
+          <p>The bank promises a fixed payment and a fixed repayment date. It cannot skip or delay either. These are the safest bank bonds and most of your money sits here. Bankers call the ordinary kind "senior preferred".</p>
         </div>
         <svg class="figure" viewBox="0 0 320 160" role="img" aria-label="A calendar with a tick and a fixed coupon">
           <rect x="30" y="30" width="120" height="100" rx="10" fill="#dce9f8" stroke="#1f5fa8" stroke-width="2"/>
@@ -85,11 +86,32 @@
       </div>
     </section>
 
+    <section class="card" aria-labelledby="b3b" style="border-left: 8px solid var(--t3)">
+      <div class="section-grid">
+        <div>
+          <h2 id="b3b">4. LACIs</h2>
+          <p>Short for "loss-absorbing capacity instruments", the name our regulator uses. Also senior bonds: a fixed payment and a fixed date that the bank cannot skip. The one difference: if the bank were failing, the regulator can use these bonds to absorb losses before depositors and ordinary senior bonds are touched. For that they pay a little more, and many of the foreign bank bonds you buy are this kind.</p>
+        </div>
+        <svg class="figure" viewBox="0 0 320 160" role="img" aria-label="Ordinary senior bonds sit above LACIs, which sit above Tier 2">
+          <rect x="20" y="14" width="200" height="38" rx="8" fill="#1f5fa8"/>
+          <text x="120" y="39" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Senior (ordinary)</text>
+          <rect x="20" y="60" width="200" height="38" rx="8" fill="#4a7fc1"/>
+          <text x="120" y="85" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Senior LACIs</text>
+          <rect x="20" y="106" width="200" height="38" rx="8" fill="#a35f00"/>
+          <text x="120" y="131" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Tier 2</text>
+          <text x="270" y="39" text-anchor="middle" font-size="13" font-weight="600" fill="#4d5966">paid 1st</text>
+          <text x="270" y="85" text-anchor="middle" font-size="13" font-weight="600" fill="#4d5966">paid 2nd</text>
+          <text x="270" y="131" text-anchor="middle" font-size="13" font-weight="600" fill="#4d5966">paid 3rd</text>
+        </svg>
+      </div>
+    </section>
+
     <section class="card" aria-labelledby="b4" style="border-left: 8px solid var(--t4)">
       <div class="section-grid">
         <div>
-          <h2 id="b4">4. Tier 2 bonds</h2>
+          <h2 id="b4">5. Tier 2 bonds</h2>
           <p>Also a fixed payment and a fixed date. The bank cannot skip payments. The only difference from senior: if the bank were failing, you would be paid after senior bondholders. That is why it pays a little more.</p>
+          <p>These are usually issued for 10 years, with the bank allowed to repay you early after 5 years. Bankers write this as "10NC5". Singapore banks have always repaid at the 5-year point, and even if one did not, it must repay you at 10 years.</p>
         </div>
         <svg class="figure" viewBox="0 0 320 160" role="img" aria-label="Senior bonds are paid first, then Tier 2 bonds, with a slightly larger coupon">
           <rect x="20" y="30" width="130" height="44" rx="8" fill="#1f5fa8"/>
@@ -98,14 +120,14 @@
           <text x="85" y="118" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Tier 2: paid 2nd</text>
           <text x="235" y="60" text-anchor="middle" font-size="22" font-weight="700" fill="#1f5fa8">3.1%</text>
           <text x="235" y="120" text-anchor="middle" font-size="26" font-weight="700" fill="#a35f00">3.2%</text>
-          <text x="235" y="150" text-anchor="middle" font-size="12" fill="#4d5966">a little more each year</text>
+          <text x="235" y="150" text-anchor="middle" font-size="12" fill="#4d5966">repaid by year 10 at the latest</text>
         </svg>
       </div>
     </section>
 
     <section class="card" aria-labelledby="b5" style="border-left: 8px solid var(--t5)">
-      <h2 id="b5">5. Perpetual bonds</h2>
-      <p class="small">"Perpetual" means the bond has no fixed end date.</p>
+      <h2 id="b5">6. Perpetual bonds (AT1)</h2>
+      <p class="small">"Perpetual" means the bond has no fixed end date. Bankers call bank perpetuals "AT1", short for "additional Tier 1 capital". Unlike a 10NC5 Tier 2 bond, there is no year-10 backstop: the bank can repay at year 5 or at later dates, but it never has to.</p>
       <ul class="points">
         <li>
           <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="currentColor"/><rect x="16" y="15" width="5" height="18" rx="1.5" fill="#fff"/><rect x="27" y="15" width="5" height="18" rx="1.5" fill="#fff"/></svg>
