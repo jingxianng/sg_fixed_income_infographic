@@ -71,6 +71,15 @@
           <label for="spending">Annual spending</label>
           <input id="spending" type="text" inputmode="numeric" autocomplete="off" value="150,000" data-value="150000">
         </div>
+        <div class="field">
+          <label for="years">Years ahead</label>
+          <select id="years">
+            <option value="10" selected>10 years</option>
+            <option value="15">15 years</option>
+            <option value="20">20 years</option>
+            <option value="25">25 years</option>
+          </select>
+        </div>
       </div>
       <p class="tiny" style="margin:0.75rem 0 0">Economists call the cost of living increase "inflation".</p>
     </section>
@@ -86,13 +95,7 @@
     </section>
 
     <section class="card result-card ten-year" id="ten-year-card" aria-labelledby="ten-title">
-      <h2 id="ten-title" class="title-with-select"><label for="years">Your money in</label>
-        <select id="years" aria-label="Number of years">
-          <option value="10" selected>10</option>
-          <option value="15">15</option>
-          <option value="20">20</option>
-          <option value="25">25</option>
-        </select> years</h2>
+      <h2 id="ten-title">Your money in <span class="years-word">10</span> years</h2>
       <div class="ten-year-grid">
         <div>
           <p class="small" style="margin:0;font-weight:600">In today's money</p>

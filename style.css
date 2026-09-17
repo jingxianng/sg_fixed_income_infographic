@@ -77,15 +77,17 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 /* Inputs */
 .inputs { display: grid; gap: 1rem; }
 @media (min-width: 700px) {
-  .inputs { grid-template-columns: 1fr 1fr 1fr; align-items: end; }
+  .inputs { grid-template-columns: 1fr 1fr; align-items: end; }
   .inputs .field label { min-height: 3rem; display: flex; align-items: flex-end; }
 }
+@media (min-width: 1000px) { .inputs { grid-template-columns: 1fr 1fr 1fr 1fr; } }
 .field label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
 .field select, .field input {
   width: 100%;
+  height: 3rem;
   font: inherit;
   font-size: 1.1rem;
-  padding: 0.6rem 0.7rem;
+  padding: 0 0.7rem;
   border: 2px solid #8a949e;
   border-radius: 10px;
   background: #fff;
@@ -115,17 +117,6 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .ten-year-grid { display: grid; gap: 1rem; align-items: center; }
 @media (min-width: 700px) { .ten-year-grid { grid-template-columns: 1fr auto; } }
 .sparkline { width: 100%; max-width: 260px; height: 70px; display: block; }
-
-.title-with-select { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
-.title-with-select select {
-  font: inherit;
-  font-weight: 700;
-  padding: 0.15rem 0.5rem;
-  border: 2px solid #8a949e;
-  border-radius: 10px;
-  background: #fff;
-  color: var(--ink);
-}
 
 /* Waterfall */
 .legend {
