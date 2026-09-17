@@ -201,7 +201,8 @@ function render() {
   // Headline card
   document.getElementById("income").textContent = fmtSGD(alloc.income);
   document.getElementById("yield").textContent = "(" + fmtPct(alloc.yield) + " yield)";
-  var future = inputs.spending * Math.pow(1 + inputs.col, a.PROJECTION_YEARS);
+  var future = inputs.spending * Math.pow(1 + inputs.col, inputs.years);
+  document.getElementById("spend-now").textContent = fmtSGD(inputs.spending);
   document.getElementById("future-spend").textContent = fmtSGD(future);
 
   // Ten-year card
