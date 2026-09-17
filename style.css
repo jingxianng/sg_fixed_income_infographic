@@ -76,7 +76,10 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 
 /* Inputs */
 .inputs { display: grid; gap: 1rem; }
-@media (min-width: 700px) { .inputs { grid-template-columns: 1fr 1fr 1fr; } }
+@media (min-width: 700px) {
+  .inputs { grid-template-columns: 1fr 1fr 1fr; align-items: end; }
+  .inputs .field label { min-height: 3rem; display: flex; align-items: flex-end; }
+}
 .field label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
 .field select, .field input {
   width: 100%;
