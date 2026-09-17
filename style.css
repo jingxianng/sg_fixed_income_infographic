@@ -227,19 +227,34 @@ details li { margin-bottom: 0.3rem; }
 .disclaimer { color: var(--muted); font-size: 0.9rem; text-align: center; margin: 1.5rem 0 0.5rem; }
 
 /* Explainer pages */
-.back { display: inline-block; margin: 0.25rem 0 1rem; font-weight: 600; }
+.back {
+  display: inline-block;
+  margin: 0.25rem 0 1.25rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+.back:hover, .back:focus-visible { background: #0b3a63; }
 .section-grid { display: grid; gap: 1rem; align-items: center; }
 @media (min-width: 700px) { .section-grid { grid-template-columns: 1fr 1fr; } }
 .figure { width: 100%; height: auto; display: block; }
 .figure text { font-family: inherit; }
-.stack { display: grid; gap: 6px; max-width: 26rem; margin: 0 auto; }
-.stack .row { padding: 0.6rem 0.9rem; border-radius: 10px; font-weight: 600; text-align: center; color: #fff; }
+.order-grid { display: grid; gap: 1.25rem; align-items: center; }
+@media (min-width: 700px) { .order-grid { grid-template-columns: 1fr 1.5fr; } }
+.stack { display: grid; gap: 10px; margin: 0; }
+.stack .row { padding: 1.1rem 1.2rem; border-radius: 14px; font-weight: 700; font-size: 1.35rem; text-align: center; color: #fff; }
+.stack .row.top { border-radius: 14px; }
+.stack-caption { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: var(--muted); margin: 0.4rem 0.2rem 0; }
 .stack .row.plain { background: #4d5966; }
 .stack .row.t3 { background: var(--t3); }
 .stack .row.t4 { background: var(--t4); }
 .stack .row.t5 { background: var(--t5); }
 .stack .row.share { background: #e4e8ec; color: var(--ink); }
-.stack .row small { display: block; font-weight: 400; font-size: 0.8rem; }
+.stack .row small { display: block; font-weight: 500; font-size: 0.9rem; opacity: 0.95; }
 .points { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
 .points li { display: flex; gap: 0.9rem; align-items: flex-start; }
 .points svg { width: 48px; height: 48px; flex: none; color: var(--t5); }
