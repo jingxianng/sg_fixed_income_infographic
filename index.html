@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Bond Plan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="kicker">For Mum and Dad</div>
+      <h1>Our Bond Plan</h1>
+      <p class="lead">How your savings are arranged, from the safest at the top to the riskiest at the bottom, and how much income they give you each year.</p>
+    </header>
+
+    <section class="card" aria-labelledby="inputs-title">
+      <h2 id="inputs-title">Your numbers</h2>
+      <div class="inputs">
+        <div class="field">
+          <label for="portfolio">Portfolio size (excluding CPF)</label>
+          <select id="portfolio">
+            <option value="1000000">S$1,000,000</option>
+            <option value="1250000">S$1,250,000</option>
+            <option value="1500000">S$1,500,000</option>
+            <option value="1750000">S$1,750,000</option>
+            <option value="2000000">S$2,000,000</option>
+            <option value="2250000">S$2,250,000</option>
+            <option value="2500000">S$2,500,000</option>
+            <option value="2750000">S$2,750,000</option>
+            <option value="3000000">S$3,000,000</option>
+            <option value="3250000">S$3,250,000</option>
+            <option value="3500000">S$3,500,000</option>
+            <option value="3750000">S$3,750,000</option>
+            <option value="4000000">S$4,000,000</option>
+            <option value="4250000" selected>S$4,250,000</option>
+            <option value="4500000">S$4,500,000</option>
+            <option value="4750000">S$4,750,000</option>
+            <option value="5000000">S$5,000,000</option>
+            <option value="5250000">S$5,250,000</option>
+            <option value="5500000">S$5,500,000</option>
+            <option value="5750000">S$5,750,000</option>
+            <option value="6000000">S$6,000,000</option>
+            <option value="6250000">S$6,250,000</option>
+            <option value="6500000">S$6,500,000</option>
+            <option value="6750000">S$6,750,000</option>
+            <option value="7000000">S$7,000,000</option>
+            <option value="7250000">S$7,250,000</option>
+            <option value="7500000">S$7,500,000</option>
+            <option value="7750000">S$7,750,000</option>
+            <option value="8000000">S$8,000,000</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="col">Cost of living increase each year</label>
+          <select id="col">
+            <option value="0.01">1%</option>
+            <option value="0.02" selected>2%</option>
+            <option value="0.03">3%</option>
+            <option value="0.04">4%</option>
+          </select>
+          <p class="help tiny">Economists call this inflation.</p>
+        </div>
+        <div class="field">
+          <label for="spending">How much you spend in a year (S$)</label>
+          <input id="spending" type="text" inputmode="numeric" autocomplete="off" value="150,000" data-value="150000">
+          <p class="help small">Everything you spend, before counting any income.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card result-card" aria-labelledby="income-title">
+      <h2 id="income-title">Estimated income each year</h2>
+      <div class="headline-row">
+        <span class="big-number" id="income">S$174,514</span>
+        <span class="beside" id="yield">(3.4% yield)</span>
+      </div>
+      <p class="small">This is the coupons and CPF payouts you receive. It does not include selling anything.</p>
+      <p class="small">To buy the same things in 10 years you will need about <strong id="future-spend">S$182,849</strong> a year.
+        The ladder below is designed to grow with you — <a href="ladder.html">see how</a>.</p>
+    </section>
+
+    <section class="card result-card ten-year" id="ten-year-card" aria-labelledby="ten-title">
+      <h2 id="ten-title">Your money in 10 years</h2>
+      <div class="ten-year-grid">
+        <div>
+          <p class="small" style="margin:0;font-weight:600">In today's money</p>
+          <div class="headline-row">
+            <span class="big-number" id="real">S$4,316,632</span>
+            <span class="beside" id="real-share">(84.1% of what you have now)</span>
+          </div>
+          <p class="small">This is what your bonds and CPF would be worth in 10 years, after paying for your spending each year, measured in today's prices.</p>
+          <p id="verdict">From year 10 your spending will be more than your income. That is fine — it comes out of bonds as they are repaid.</p>
+        </div>
+        <svg class="sparkline" id="sparkline" viewBox="0 0 260 70" role="img" aria-label="Your money in today's dollars over the next 10 years"></svg>
+      </div>
+    </section>
+
+    <section aria-labelledby="waterfall-title">
+      <h2 id="waterfall-title">Where your money sits</h2>
+      <p class="small">Each block is S$250,000. Safest at the top, riskiest at the bottom.</p>
+      <ul class="legend" aria-label="Colour legend">
+        <li><span class="swatch" style="background:var(--t1)"></span>Government guaranteed</li>
+        <li><span class="swatch" style="background:var(--t2)"></span>Government guaranteed, tradeable</li>
+        <li><span class="swatch" style="background:var(--t3)"></span>Very safe bank bonds</li>
+        <li><span class="swatch" style="background:var(--t4)"></span>Safe bank bonds, paid after senior</li>
+        <li><span class="swatch" style="background:var(--t5)"></span>Higher income, higher risk. Keep to this size.</li>
+      </ul>
+
+      <section class="tier tier-1" id="tier-1" aria-labelledby="tier-1-title">
+        <div class="tier-head">
+          <span class="tier-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z" fill="currentColor"/><path d="M16 24l6 6 10-12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div>
+            <div class="risk">Tier 1 · Government guaranteed</div>
+            <h3 id="tier-1-title">CPF Retirement Account</h3>
+          </div>
+        </div>
+        <p class="tier-desc">Government pays 4% guaranteed. Money comes back to you monthly.</p>
+        <div class="tier-body">
+          <div>
+            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block partial"><div class="fill" style="width:52.6%"></div><span>S$132k</span></div></div>
+            <p class="lot-line">Fixed amount: S$881,600 (about 3.5 lots)</p>
+          </div>
+          <div class="tier-summary">
+            <div class="label">Expected yield</div>
+            <div class="yield">4.0%</div>
+            <div class="label">Expected coupons</div>
+            <div class="coupons">S$35,264 a year</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 18 26"><path d="M9 2v20M3 16l6 7 6-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Safest</span>
+      </div>
+
+      <section class="tier tier-2" id="tier-2" aria-labelledby="tier-2-title">
+        <div class="tier-head">
+          <span class="tier-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20L24 8l18 12H6z" fill="currentColor"/><rect x="10" y="22" width="5" height="14" fill="currentColor"/><rect x="21.5" y="22" width="5" height="14" fill="currentColor"/><rect x="33" y="22" width="5" height="14" fill="currentColor"/><rect x="6" y="38" width="36" height="5" fill="currentColor"/></svg></span>
+          <div>
+            <div class="risk">Tier 2 · Government guaranteed, tradeable</div>
+            <h3 id="tier-2-title">Singapore Government bonds (SGS)</h3>
+          </div>
+        </div>
+        <p class="tier-desc">Bonds issued by the Singapore Government. As safe as it gets outside CPF, and easy to sell if you ever need to.</p>
+        <div class="tier-body">
+          <div>
+            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
+            <p class="lot-line">2 lots = S$500,000 (12.0% of your portfolio)</p>
+          </div>
+          <div class="tier-summary">
+            <div class="label">Expected yield</div>
+            <div class="yield">2.3%</div>
+            <div class="label">Expected coupons</div>
+            <div class="coupons">S$11,500 a year</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 18 26"><path d="M9 2v20M3 16l6 7 6-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Very safe</span>
+      </div>
+
+      <section class="tier tier-3" id="tier-3" aria-labelledby="tier-3-title">
+        <div class="tier-head">
+          <span class="tier-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="3" fill="currentColor"/><rect x="14" y="12" width="6" height="6" fill="#fff"/><rect x="28" y="12" width="6" height="6" fill="#fff"/><rect x="14" y="22" width="6" height="6" fill="#fff"/><rect x="28" y="22" width="6" height="6" fill="#fff"/><rect x="20" y="32" width="8" height="10" fill="#fff"/></svg></span>
+          <div>
+            <div class="risk">Tier 3 · Very safe bank bonds</div>
+            <h3 id="tier-3-title">Senior bonds from large foreign banks</h3>
+          </div>
+        </div>
+        <p class="tier-desc">Big, well-known foreign banks. Paid back first if anything goes wrong.</p>
+        <div class="tier-body">
+          <div>
+            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
+            <p class="lot-line">8 lots = S$2,000,000 (43.0% of your portfolio)</p>
+          </div>
+          <div class="tier-summary">
+            <div class="label">Expected yield</div>
+            <div class="yield">3.1%</div>
+            <div class="label">Expected coupons</div>
+            <div class="coupons">S$62,000 a year</div>
+          </div>
+        </div>
+        <p class="small"><a href="banks.html">How do bank bonds work?</a></p>
+      </section>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 18 26"><path d="M9 2v20M3 16l6 7 6-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Safe</span>
+      </div>
+
+      <section class="tier tier-4" id="tier-4" aria-labelledby="tier-4-title">
+        <div class="tier-head">
+          <span class="tier-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="28" rx="4" fill="currentColor"/><rect x="6" y="17" width="36" height="5" fill="#fff"/><rect x="12" y="27" width="10" height="4" fill="#fff"/></svg></span>
+          <div>
+            <div class="risk">Tier 4 · Safe bank bonds, paid after senior</div>
+            <h3 id="tier-4-title">Local bank Tier 2 bonds (DBS, OCBC, UOB)</h3>
+          </div>
+        </div>
+        <p class="tier-desc">DBS, OCBC and UOB. Very safe, slightly higher income, paid back after senior bonds.</p>
+        <div class="tier-body">
+          <div>
+            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
+            <p class="lot-line">4 lots = S$1,000,000 (25.0% of your portfolio)</p>
+          </div>
+          <div class="tier-summary">
+            <div class="label">Expected yield</div>
+            <div class="yield">3.2%</div>
+            <div class="label">Expected coupons</div>
+            <div class="coupons">S$32,000 a year</div>
+          </div>
+        </div>
+        <p class="small"><a href="banks.html">How do bank bonds work?</a></p>
+      </section>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 18 26"><path d="M9 2v20M3 16l6 7 6-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Careful</span>
+      </div>
+
+      <section class="tier tier-5" id="tier-5" aria-labelledby="tier-5-title">
+        <div class="tier-head">
+          <span class="tier-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="currentColor"/><path d="M24 14v20M18 20h9a4 4 0 010 8h-6a4 4 0 000 8h9" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span>
+          <div>
+            <div class="risk">Tier 5 · Higher income, higher risk</div>
+            <h3 id="tier-5-title">Bank perpetual bonds (AT1)</h3>
+          </div>
+        </div>
+        <p class="tier-desc">Pays the most, but the bank can skip payments or not pay you back on time. Keep this to one fifth.</p>
+        <div class="tier-body">
+          <div>
+            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
+            <p class="lot-line">3 lots = S$750,000 (20.0% of your portfolio)</p>
+          </div>
+          <div class="tier-summary">
+            <div class="label">Expected yield</div>
+            <div class="yield">4.5%</div>
+            <div class="label">Expected coupons</div>
+            <div class="coupons">S$33,750 a year</div>
+          </div>
+        </div>
+        <div class="inset">
+          <h4>The TD bond you already own</h4>
+          <ul>
+            <li>Toronto-Dominion Bank. Pays 5.70% a year on face value, in Singapore dollars, every six months.</li>
+            <li id="td-yield-line">JX will fill this in from your contract note.</li>
+            <li>The bank can choose to repay you on 31 July 2029. If it does not, the rate resets to a Singapore interest rate plus 2.65%, and it can repay you at later dates.</li>
+            <li>TD can skip a payment, but if it does, it cannot pay its own shareholders until it pays you again.</li>
+            <li>If TD were ever failing, this bond turns into TD shares rather than disappearing.</li>
+            <li>TD's capital cushion was 14.3% at April 2026, well above what regulators require.</li>
+          </ul>
+          <p class="tiny">Source: TD pricing supplement dated 8 July 2024 (Series 2023-9) and TD's programme prospectus, July 2026.</p>
+          <p class="small"><a href="banks.html">How do bank bonds work?</a></p>
+        </div>
+      </section>
+
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 18 26"><path d="M9 2v20M3 16l6 7 6-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>One fifth, no more</span>
+      </div>
+    </section>
+
+    <section class="card rules" aria-labelledby="rules-title">
+      <h2 id="rules-title">Five rules</h2>
+      <ol>
+        <li>Never sell a bond because its price fell. You still get every coupon.</li>
+        <li>Before buying any bond, ask a second bank for a price on the same bond. Only deal if the prices are close.
+          <span class="why">Why: banks add a hidden margin to bond prices; a second quote shows you how much.</span></li>
+        <li>Ask for the yield to call (or yield to maturity), not the coupon rate. The coupon is what the bond pays on 100; the yield is what you actually earn on the price you pay. Buy on the yield.
+          <span class="why">Why: a 5.7% coupon bought at 104 earns about 4.5% a year to the call date.</span></li>
+        <li>Keep the bottom tier at one fifth. Only buy more perpetuals when a local bank issues a new one, never at a price above 100.</li>
+        <li>Each year, check your spending against the cost-of-living line above.</li>
+      </ol>
+    </section>
+
+    <details id="assumptions">
+      <summary>Assumptions we used</summary>
+      <p class="small">Yields are September 2026 working estimates until the bank quotes real prices. Update them in <code>app.js</code>.</p>
+      <ul id="assumption-yields">
+        <li>Tier 1: 4.0% — CPF Retirement Account interest, guaranteed by the Government</li>
+        <li>Tier 2: 2.3% — SGS 2 to 7 year yields, about 2.0 to 2.5%</li>
+        <li>Tier 3: 3.1% — 5-year SGD swap + ~1.0%</li>
+        <li>Tier 4: 3.2% — 5-year SGD swap + ~1.1%</li>
+        <li>Tier 5: 4.5% — 5-year SGD swap + ~2.4%; existing TD bond pays 5.70%</li>
+      </ul>
+      <p class="small">CPF is fixed at S$881,600: two people at the 2026 Enhanced Retirement Sum of S$440,800 each. Each tier's share of the portfolio is rounded to whole S$250,000 lots; any remainder goes to Tier 3.</p>
+      <p class="small"><strong>The ten-year projection is simplified:</strong></p>
+      <ul>
+        <li>Yields stay at today's levels for all ten years.</li>
+        <li>Coupons you do not spend are reinvested at the same yield.</li>
+        <li>CPF is treated as part of the pool earning its 4%.</li>
+        <li>No tax: Singapore does not tax individuals on bond interest or CPF.</li>
+        <li>No other income (rent, dividends, pensions) is counted.</li>
+      </ul>
+    </details>
+
+    <p class="disclaimer">Prepared by JX for family use. Not financial advice. Check prices with the bank before buying.</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
