@@ -260,7 +260,7 @@ function wireSpending() {
 function init() {
   var sel = document.getElementById("portfolio");
   if (sel && !sel.options.length) {
-    for (var v = 1000000; v <= 8000000; v += 250000) {
+    for (var v = 1000000; v <= 10000000; v += 250000) {
       var o = document.createElement("option");
       o.value = String(v);
       o.textContent = fmtSGD(v);

@@ -12,7 +12,7 @@ test("allocation rounds to whole lots and remainder goes to Tier 3", () => {
 });
 
 test("every portfolio size allocates all lots", () => {
-  for (let p = 1000000; p <= 8000000; p += 250000) {
+  for (let p = 1000000; p <= 10000000; p += 250000) {
     const a = allocate(p);
     const lots = a.tiers.filter(t => t.id !== 1).reduce((s, t) => s + t.lots, 0);
     assert.equal(lots * ASSUMPTIONS.LOT, p, "portfolio " + p);
