@@ -224,7 +224,7 @@ function render() {
   var list = document.getElementById("assumption-yields");
   if (list) {
     list.innerHTML = alloc.tiers.map(function (t) {
-      return "<li>Tier " + t.id + ": " + fmtPct(t.yield) + " — " + t.basis + "</li>";
+      return "<li>Step " + t.id + ": " + fmtPct(t.yield) + " — " + t.basis + "</li>";
     }).join("");
   }
   var td = document.getElementById("td-yield-line");
