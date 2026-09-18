@@ -2,10 +2,10 @@ const test = require("node:test");
 const assert = require("node:assert");
 const { ASSUMPTIONS, allocate, projectTenYears, summariseProjection, fmtSGD, fmtPct } = require("../app.js");
 
-test("allocation rounds to whole lots and remainder goes to Tier 3", () => {
+test("allocation rounds to whole lots and remainder goes to Step 2 (SGS)", () => {
   const a = allocate(4250000);
   const byId = Object.fromEntries(a.tiers.map(t => [t.id, t]));
-  assert.equal(byId[2].lots, 2); assert.equal(byId[3].lots, 8);
+  assert.equal(byId[3].lots, 7); assert.equal(byId[2].lots, 3);
   assert.equal(byId[4].lots, 4); assert.equal(byId[5].lots, 3);
   assert.equal(byId[2].lots + byId[3].lots + byId[4].lots + byId[5].lots, 17);
   assert.equal(a.total, 4250000 + ASSUMPTIONS.CPF_AMOUNT);
@@ -71,11 +71,11 @@ test("projection honours the years input", () => {
   assert.equal(projectTenYears({ portfolio: 4250000, col: 0.02, spending: 150000 }, ASSUMPTIONS).length, 10);
 });
 
-test("allocate honours slider shares and gives Step 3 the balance", () => {
-  const a = allocate(4250000, ASSUMPTIONS, { 2: 0.2, 4: 0.3, 5: 0.1 });
+test("allocate honours slider shares and gives Step 2 the balance", () => {
+  const a = allocate(4250000, ASSUMPTIONS, { 3: 0.2, 4: 0.3, 5: 0.1 });
   const byId = Object.fromEntries(a.tiers.map(t => [t.id, t]));
-  assert.ok(Math.abs(byId[3].share - 0.4) < 1e-9);
+  assert.ok(Math.abs(byId[2].share - 0.4) < 1e-9);
   assert.equal(byId[2].lots + byId[3].lots + byId[4].lots + byId[5].lots, 17);
-  const rows = projectTenYears({ portfolio: 4250000, col: 0.02, spending: 150000, shares: { 2: 0.5, 4: 0.5, 5: 0 } }, ASSUMPTIONS);
+  const rows = projectTenYears({ portfolio: 4250000, col: 0.02, spending: 150000, shares: { 3: 0.5, 4: 0.5, 5: 0 } }, ASSUMPTIONS);
   assert.equal(rows.length, 10);
 });

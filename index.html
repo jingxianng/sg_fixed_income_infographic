@@ -84,11 +84,14 @@
       <p class="tiny" style="margin:0.75rem 0 0">Economists call the cost of living increase "inflation".</p>
       <details class="advanced" id="advanced">
         <summary>Try a different split (optional)</summary>
-        <p class="small">Move the sliders to see how a different split changes your income. Step 3 takes whatever is left. Step 1 (CPF) is fixed.</p>
+        <p class="small">Move the sliders to see how a different split changes your income. Step 2, the safest, takes whatever is left. Step 1 (CPF) is fixed.</p>
         <div class="sliders">
+          <div class="slider balance">
+            <span>Step 2 · Singapore Government bonds (safest, takes the rest)</span> <output id="share-2-out">12%</output>
+          </div>
           <div class="slider">
-            <label for="share-2">Step 2 · Singapore Government bonds <output id="share-2-out" for="share-2">12%</output></label>
-            <input type="range" id="share-2" min="0" max="60" step="1" value="12">
+            <label for="share-3">Step 3 · Senior bonds from foreign banks <output id="share-3-out" for="share-3">43%</output></label>
+            <input type="range" id="share-3" min="0" max="80" step="1" value="43">
           </div>
           <div class="slider">
             <label for="share-4">Step 4 · Local bank Tier 2 bonds <output id="share-4-out" for="share-4">25%</output></label>
@@ -97,9 +100,6 @@
           <div class="slider">
             <label for="share-5">Step 5 · Bank perpetual bonds <output id="share-5-out" for="share-5">20%</output></label>
             <input type="range" id="share-5" min="0" max="50" step="1" value="20">
-          </div>
-          <div class="slider balance">
-            <span>Step 3 · Senior bank bonds (the rest)</span> <output id="share-3-out">43%</output>
           </div>
         </div>
         <p class="small warn" id="share-warning" hidden>The plan keeps Step 5 at one fifth or less.</p>
@@ -110,10 +110,10 @@
     <section class="card result-card" aria-labelledby="income-title">
       <h2 id="income-title">Estimated income each year</h2>
       <div class="headline-row">
-        <span class="big-number" id="income">S$174,514</span>
+        <span class="big-number" id="income">S$172,514</span>
         <span class="beside" id="yield">(3.4% yield)</span>
       </div>
-      <p class="small">Coupons from your bonds <strong id="income-bonds">S$139,250</strong> plus CPF payouts <strong id="income-cpf">S$35,264</strong>. CPF is counted on top of the portfolio size above.</p>
+      <p class="small">Coupons from your bonds <strong id="income-bonds">S$137,250</strong> plus CPF payouts <strong id="income-cpf">S$35,264</strong>. CPF is counted on top of the portfolio size above.</p>
       <p class="small">To buy the same things that <strong id="spend-now">S$150,000</strong> buys today, you need <strong id="future-spend">S$182,849</strong> in <span class="years-word">10</span> years.</p>
     </section>
 
@@ -123,8 +123,8 @@
         <div>
           <p class="small" style="margin:0;font-weight:600">In today's money</p>
           <div class="headline-row">
-            <span class="big-number" id="real">S$4,316,632</span>
-            <span class="beside" id="real-share">(84.1% of what you have now)</span>
+            <span class="big-number" id="real">S$4,297,219</span>
+            <span class="beside" id="real-share">(83.7% of what you have now)</span>
           </div>
           <p class="small">This is what your bonds and CPF would be worth in <span class="years-word">10</span> years, after paying for your spending each year, measured in today's prices.</p>
           <p id="verdict">From year 10 your spending will be more than your income. That is fine — it comes out of bonds as they are repaid. In today's money your savings shrink slowly.</p>
@@ -182,14 +182,14 @@
         </div>
         <div class="tier-body">
           <div>
-            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
-            <p class="lot-line">2 lots = S$500,000 (12.0% of your portfolio)</p>
+            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
+            <p class="lot-line">3 lots = S$750,000 (17.6% of your portfolio)</p>
           </div>
           <div class="tier-right">
           <p class="tier-desc">Singapore Government Bonds. Safe, liquid.</p>
           <div class="tier-summary">
             <div class="stat"><div class="label">Expected yield</div><div class="yield">2.3%</div></div>
-            <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$11,500 a year</div></div>
+            <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$17,250 a year</div></div>
           </div>
           </div>
         </div>
@@ -210,15 +210,15 @@
         </div>
         <div class="tier-body">
           <div>
-            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
-            <p class="lot-line">8 lots = S$2,000,000 (43.0% of your portfolio)</p>
+            <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
+            <p class="lot-line">7 lots = S$1,750,000 (41.2% of your portfolio)</p>
             <p class="small explain-link"><a href="ladder.html">How does the ladder work?</a><br><a href="banks.html">Explainer: Bonds, LACIs, Tier2, and AT1</a></p>
           </div>
           <div class="tier-right">
           <p class="tier-desc">Big foreign banks. Paid back first if anything goes wrong.</p>
           <div class="tier-summary">
             <div class="stat"><div class="label">Expected yield</div><div class="yield">3.1%</div></div>
-            <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$62,000 a year</div></div>
+            <div class="stat"><div class="label">Expected coupons</div><div class="coupons">S$54,250 a year</div></div>
           </div>
           </div>
         </div>
@@ -240,7 +240,7 @@
         <div class="tier-body">
           <div>
             <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
-            <p class="lot-line">4 lots = S$1,000,000 (25.0% of your portfolio)</p>
+            <p class="lot-line">4 lots = S$1,000,000 (23.5% of your portfolio)</p>
             <p class="small explain-link"><a href="banks.html">Explainer: Bonds, LACIs, Tier2, and AT1</a></p>
           </div>
           <div class="tier-right">
@@ -269,7 +269,7 @@
         <div class="tier-body">
           <div>
             <div class="blocks"><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div><div class="block"><span>S$250k</span></div></div>
-            <p class="lot-line">3 lots = S$750,000 (20.0% of your portfolio)</p>
+            <p class="lot-line">3 lots = S$750,000 (17.6% of your portfolio)</p>
           </div>
           <div class="tier-right">
           <p class="tier-desc">Pays the most, but the bank can skip payments or not pay back on time.</p>
@@ -327,7 +327,7 @@
         <li>Step 4: 3.2% — 5-year SGD swap + ~1.1%</li>
         <li>Step 5: 4.5% — 5-year SGD swap + ~2.4%; existing TD bond pays 5.70%</li>
       </ul>
-      <p class="small">CPF is fixed at S$881,600: two people at the 2026 Enhanced Retirement Sum of S$440,800 each. Each step's share of the portfolio is rounded to whole S$250,000 lots; any remainder goes to Step 3.</p>
+      <p class="small">CPF is fixed at S$881,600: two people at the 2026 Enhanced Retirement Sum of S$440,800 each. Each step's share of the portfolio is rounded to whole S$250,000 lots; any remainder goes to Step 2, the safest.</p>
       <p class="small"><strong>The ten-year projection is simplified:</strong></p>
       <ul>
         <li>Yields stay at today's levels for all ten years.</li>

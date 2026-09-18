@@ -19,7 +19,7 @@ var ASSUMPTIONS = {
     { id: 5, name: "Bank perpetual bonds (AT1)", share: 0.20, yield: 0.045,
       basis: "5-year SGD swap + ~2.4%; existing TD bond pays 5.70%" }
   ],
-  REMAINDER_TIER: 3,           // whole-lot rounding remainder goes here
+  REMAINDER_TIER: 2,           // whole-lot rounding remainder and slider balance go here (SGS, the safest)
 
   TD_COUPON: 5.70,             // % a year on face value
   TD_YIELD_TO_CALL: null,      // % a year on the price actually paid; null = not yet known
@@ -47,7 +47,7 @@ function fmtInt(n) {
 
 // Splits the portfolio into whole S$250k lots per tier. Rounding remainder goes
 // to ASSUMPTIONS.REMAINDER_TIER. CPF is added as a fixed amount.
-// shares (optional): { 2: 0.12, 4: 0.25, 5: 0.20 } overrides for the sliders;
+// shares (optional): { 3: 0.43, 4: 0.25, 5: 0.20 } overrides for the sliders;
 // the remainder tier's share is whatever is left.
 function allocate(portfolio, a, shares) {
   a = a || ASSUMPTIONS;
@@ -158,7 +158,7 @@ function renderBlocks(tier, lot) {
   return html;
 }
 
-function renderTier(tier) {
+function renderTier(tier, portfolio) {
   var el = document.getElementById("tier-" + tier.id);
   if (!el) return;
   var ic = el.querySelector(".tier-icon");
@@ -166,7 +166,7 @@ function renderTier(tier) {
   el.querySelector(".blocks").innerHTML = renderBlocks(tier, ASSUMPTIONS.LOT);
   var lotText;
   if (tier.id === 1) lotText = "Fixed amount: " + fmtSGD(tier.amount) + " (about " + tier.lots.toFixed(1) + " lots)";
-  else lotText = tier.lots + (tier.lots === 1 ? " lot" : " lots") + " = " + fmtSGD(tier.amount) + " (" + fmtPct(tier.share) + " of your portfolio)";
+  else lotText = tier.lots + (tier.lots === 1 ? " lot" : " lots") + " = " + fmtSGD(tier.amount) + " (" + fmtPct(portfolio > 0 ? tier.amount / portfolio : 0) + " of your portfolio)";
   el.querySelector(".lot-line").textContent = lotText;
   el.querySelector(".yield").textContent = fmtPct(tier.yield);
   el.querySelector(".coupons").textContent = fmtSGD(tier.coupons) + " a year";
@@ -201,7 +201,7 @@ function readInputs() {
   return { portfolio: portfolio, col: col, spending: spending, years: years, shares: readShares() };
 }
 
-var SLIDER_IDS = [2, 4, 5];
+var SLIDER_IDS = [3, 4, 5];
 
 function readShares() {
   var shares = {};
@@ -249,7 +249,7 @@ function render() {
   if (warn) warn.hidden = !(inputs.shares[5] > 0.2 + 1e-9);
 
   // Waterfall
-  alloc.tiers.forEach(renderTier);
+  alloc.tiers.forEach(function (t) { renderTier(t, inputs.portfolio); });
 
   // Assumptions panel
   var list = document.getElementById("assumption-yields");
@@ -288,7 +288,7 @@ function wireSpending() {
   });
 }
 
-// Sliders for Steps 2, 4 and 5. Step 3 is the balance, so the three sliders
+// Sliders for Steps 3, 4 and 5. Step 2 (SGS) is the balance, so the three sliders
 // together can never exceed 100%; the slider being moved is clamped.
 function wireSliders() {
   SLIDER_IDS.forEach(function (id) {
