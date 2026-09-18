@@ -8,6 +8,7 @@ Plain HTML, CSS and vanilla JavaScript. No build step. Open `index.html` directl
 - `index.html` — main page: inputs, income headline, ten-year projection, allocation waterfall, five rules, assumptions.
 - `ladder.html` — how a bond ladder works.
 - `banks.html` — how bank bonds work.
+- `cpf.html` — CPF Retirement Account rules and why we top up.
 - `style.css`, `app.js` — shared styles and all logic.
 - `test/app.test.js` — unit tests: `node --test test/app.test.js`
 
