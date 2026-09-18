@@ -57,7 +57,7 @@ test("formatting", () => {
 
 test("verdict distinguishes growing and shrinking real value", () => {
   const { verdictText } = require("../app.js");
-  assert.match(verdictText({ runsOut: 3, firstDeficit: 1, share: 0 }), /runs out in year 3\. Talk to JX/);
+  assert.match(verdictText({ runsOut: 3, firstDeficit: 1, share: 0 }), /runs out in year 3\. Talk to JX or ZX/);
   assert.match(verdictText({ runsOut: null, firstDeficit: null, share: 1.1 }), /Your money grows/);
   assert.match(verdictText({ runsOut: null, firstDeficit: null, share: 0.9 }), /savings shrink slowly/);
   assert.match(verdictText({ runsOut: null, firstDeficit: 10, share: 0.84 }), /From year 10 .* shrink slowly/);

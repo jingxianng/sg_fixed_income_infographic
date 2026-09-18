@@ -25,7 +25,7 @@ var ASSUMPTIONS = {
   TD_YIELD_TO_CALL: null,      // % a year on the price actually paid; null = not yet known
 
   PROJECTION_YEARS: 10,
-  PERSON: "JX"
+  PERSON: "JX or ZX"
 };
 
 // ---------- formatting ----------
