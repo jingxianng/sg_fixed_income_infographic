@@ -95,6 +95,19 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 }
 .field .help { margin: 0.3rem 0 0; }
 
+/* Optional allocation sliders */
+.advanced { margin: 1rem 0 0; padding: 0.5rem 1rem; border-color: var(--line); background: var(--page); }
+.advanced summary { font-size: 1rem; }
+.sliders { display: grid; gap: 0.75rem; margin: 0.5rem 0; }
+@media (min-width: 700px) { .sliders { grid-template-columns: 1fr 1fr; } }
+.slider label, .slider span { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 0.2rem; }
+.slider output { font-weight: 700; color: var(--accent); }
+.slider input[type="range"] { width: 100%; accent-color: var(--accent); height: 2rem; }
+.slider.balance { padding: 0.5rem 0.75rem; border-radius: 10px; background: #fff; border: 1px solid var(--line); align-self: end; }
+.warn { color: var(--t5); font-weight: 600; }
+.btn { font: inherit; font-weight: 600; padding: 0.5rem 1rem; border-radius: 10px; border: 2px solid var(--accent); background: #fff; color: var(--accent); cursor: pointer; margin: 0.25rem 0 0.5rem; }
+.btn:hover { background: var(--accent); color: #fff; }
+
 /* Headline cards */
 .big-number {
   font-size: 2.6rem;

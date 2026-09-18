@@ -82,6 +82,29 @@
         </div>
       </div>
       <p class="tiny" style="margin:0.75rem 0 0">Economists call the cost of living increase "inflation".</p>
+      <details class="advanced" id="advanced">
+        <summary>Try a different split (optional)</summary>
+        <p class="small">Move the sliders to see how a different split changes your income. Step 3 takes whatever is left. Step 1 (CPF) is fixed.</p>
+        <div class="sliders">
+          <div class="slider">
+            <label for="share-2">Step 2 · Singapore Government bonds <output id="share-2-out" for="share-2">12%</output></label>
+            <input type="range" id="share-2" min="0" max="60" step="1" value="12">
+          </div>
+          <div class="slider">
+            <label for="share-4">Step 4 · Local bank Tier 2 bonds <output id="share-4-out" for="share-4">25%</output></label>
+            <input type="range" id="share-4" min="0" max="60" step="1" value="25">
+          </div>
+          <div class="slider">
+            <label for="share-5">Step 5 · Bank perpetual bonds <output id="share-5-out" for="share-5">20%</output></label>
+            <input type="range" id="share-5" min="0" max="50" step="1" value="20">
+          </div>
+          <div class="slider balance">
+            <span>Step 3 · Senior bank bonds (the rest)</span> <output id="share-3-out">43%</output>
+          </div>
+        </div>
+        <p class="small warn" id="share-warning" hidden>The plan keeps Step 5 at one fifth or less.</p>
+        <button type="button" class="btn" id="reset-shares">Back to the plan</button>
+      </details>
     </section>
 
     <section class="card result-card" aria-labelledby="income-title">

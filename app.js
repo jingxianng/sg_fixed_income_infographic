@@ -47,12 +47,20 @@ function fmtInt(n) {
 
 // Splits the portfolio into whole S$250k lots per tier. Rounding remainder goes
 // to ASSUMPTIONS.REMAINDER_TIER. CPF is added as a fixed amount.
-function allocate(portfolio, a) {
+// shares (optional): { 2: 0.12, 4: 0.25, 5: 0.20 } overrides for the sliders;
+// the remainder tier's share is whatever is left.
+function allocate(portfolio, a, shares) {
   a = a || ASSUMPTIONS;
   var totalLots = Math.round(portfolio / a.LOT);
   var rows = a.TIERS.map(function (t) {
-    return { id: t.id, name: t.name, yield: t.yield, share: t.share, basis: t.basis, lots: 0, amount: 0 };
+    var share = shares && shares[t.id] !== undefined ? shares[t.id] : t.share;
+    return { id: t.id, name: t.name, yield: t.yield, share: share, basis: t.basis, lots: 0, amount: 0 };
   });
+  if (shares) {
+    var used = 0;
+    rows.forEach(function (r) { if (r.id !== a.REMAINDER_TIER) used += r.share; });
+    rows.forEach(function (r) { if (r.id === a.REMAINDER_TIER) r.share = Math.max(0, 1 - used); });
+  }
   var used = 0;
   rows.forEach(function (r) {
     if (r.id === a.REMAINDER_TIER) return;
@@ -80,7 +88,7 @@ function allocate(portfolio, a) {
 function projectTenYears(inputs, assumptions) {
   var a = assumptions || ASSUMPTIONS;
   var years = inputs.years || a.PROJECTION_YEARS;
-  var alloc = allocate(inputs.portfolio, a);
+  var alloc = allocate(inputs.portfolio, a, inputs.shares);
   var w = alloc.total;
   var y = alloc.yield;
   var g = inputs.col;
@@ -190,13 +198,24 @@ function readInputs() {
   var spending = Number(spendEl.getAttribute("data-value") || 0);
   var yearsEl = document.getElementById("years");
   var years = yearsEl ? Number(yearsEl.value) : ASSUMPTIONS.PROJECTION_YEARS;
-  return { portfolio: portfolio, col: col, spending: spending, years: years };
+  return { portfolio: portfolio, col: col, spending: spending, years: years, shares: readShares() };
+}
+
+var SLIDER_IDS = [2, 4, 5];
+
+function readShares() {
+  var shares = {};
+  SLIDER_IDS.forEach(function (id) {
+    var el = document.getElementById("share-" + id);
+    if (el) shares[id] = Number(el.value) / 100;
+  });
+  return shares;
 }
 
 function render() {
-  var inputs = readInputs();
-  var alloc = allocate(inputs.portfolio);
   var a = ASSUMPTIONS;
+  var inputs = readInputs();
+  var alloc = allocate(inputs.portfolio, a, inputs.shares);
 
   // Headline card
   document.getElementById("income").textContent = fmtSGD(alloc.income);
@@ -217,6 +236,14 @@ function render() {
   if (s.runsOut !== null) card.classList.add("danger");
   verdict.textContent = verdictText(s, a);
   renderSparkline(rows, alloc.total, inputs.col);
+
+  // Sliders
+  alloc.tiers.forEach(function (t) {
+    var out = document.getElementById("share-" + t.id + "-out");
+    if (out) out.textContent = Math.round(t.share * 100) + "%";
+  });
+  var warn = document.getElementById("share-warning");
+  if (warn) warn.hidden = !(inputs.shares[5] > 0.2 + 1e-9);
 
   // Waterfall
   alloc.tiers.forEach(renderTier);
@@ -258,6 +285,29 @@ function wireSpending() {
   });
 }
 
+// Sliders for Steps 2, 4 and 5. Step 3 is the balance, so the three sliders
+// together can never exceed 100%; the slider being moved is clamped.
+function wireSliders() {
+  SLIDER_IDS.forEach(function (id) {
+    var el = document.getElementById("share-" + id);
+    if (!el) return;
+    el.addEventListener("input", function () {
+      var others = 0;
+      SLIDER_IDS.forEach(function (o) { if (o !== id) others += Number(document.getElementById("share-" + o).value); });
+      if (Number(el.value) + others > 100) el.value = String(100 - others);
+      render();
+    });
+  });
+  var reset = document.getElementById("reset-shares");
+  if (reset) reset.addEventListener("click", function () {
+    ASSUMPTIONS.TIERS.forEach(function (t) {
+      var el = document.getElementById("share-" + t.id);
+      if (el) el.value = String(Math.round(t.share * 100));
+    });
+    render();
+  });
+}
+
 function init() {
   var sel = document.getElementById("portfolio");
   if (sel && !sel.options.length) {
@@ -272,6 +322,7 @@ function init() {
   document.getElementById("portfolio").addEventListener("change", render);
   document.getElementById("col").addEventListener("change", render);
   document.getElementById("years").addEventListener("change", render);
+  wireSliders();
   wireSpending();
   render();
 }
