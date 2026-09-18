@@ -12,9 +12,9 @@ var ASSUMPTIONS = {
   TIERS: [
     { id: 2, name: "Singapore Government bonds (SGS)", share: 0.12, yield: 0.023,
       basis: "SGS 2 to 7 year yields, about 2.0 to 2.5%" },
-    { id: 3, name: "Senior bonds from large foreign banks", share: 0.43, yield: 0.031,
+    { id: 3, name: "Senior bank bonds", share: 0.43, yield: 0.031,
       basis: "5-year SGD swap + ~1.0%" },
-    { id: 4, name: "Local bank Tier 2 bonds (DBS, OCBC, UOB)", share: 0.25, yield: 0.032,
+    { id: 4, name: "Bank Tier 2 bonds", share: 0.25, yield: 0.032,
       basis: "5-year SGD swap + ~1.1%" },
     { id: 5, name: "Bank perpetual bonds (AT1)", share: 0.20, yield: 0.045,
       basis: "5-year SGD swap + ~2.4%; existing TD bond pays 5.70%" }
