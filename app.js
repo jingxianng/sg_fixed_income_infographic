@@ -220,6 +220,9 @@ function render() {
   // Headline card
   document.getElementById("income").textContent = fmtSGD(alloc.income);
   document.getElementById("yield").textContent = "(" + fmtPct(alloc.yield) + " yield)";
+  var cpfIncome = alloc.tiers[0].coupons;
+  document.getElementById("income-bonds").textContent = fmtSGD(alloc.income - cpfIncome);
+  document.getElementById("income-cpf").textContent = fmtSGD(cpfIncome);
   var future = inputs.spending * Math.pow(1 + inputs.col, inputs.years);
   document.getElementById("spend-now").textContent = fmtSGD(inputs.spending);
   document.getElementById("future-spend").textContent = fmtSGD(future);

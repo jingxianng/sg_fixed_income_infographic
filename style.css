@@ -164,24 +164,24 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .tier-desc { margin: 0 0 0.9rem; font-size: 1.05rem; }
 
 .tier-body { display: grid; gap: 1rem; }
-@media (min-width: 700px) { .tier-body { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: stretch; } }
+@media (min-width: 700px) { .tier-body { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: stretch; } }
 .tier-right { display: flex; flex-direction: column; }
 .tier-right .tier-summary { margin-top: auto; }
 .explain-link { margin: 0.4rem 0 0; }
 
 .blocks { display: flex; flex-wrap: wrap; gap: 8px; }
 .block {
-  width: 84px;
-  height: 66px;
+  width: 96px;
+  height: 72px;
   border-radius: 10px;
   background: var(--tc);
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  padding: 6px 8px;
+  padding: 6px 9px;
   overflow: hidden;
   opacity: 0.95;
 }

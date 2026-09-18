@@ -17,7 +17,7 @@
       <h2 id="inputs-title">Your numbers</h2>
       <div class="inputs">
         <div class="field">
-          <label for="portfolio">Portfolio size (excluding CPF)</label>
+          <label for="portfolio">Portfolio size (bonds only, CPF is on top)</label>
           <select id="portfolio">
             <option value="1000000">S$1,000,000</option>
             <option value="1250000">S$1,250,000</option>
@@ -113,7 +113,7 @@
         <span class="big-number" id="income">S$174,514</span>
         <span class="beside" id="yield">(3.4% yield)</span>
       </div>
-      <p class="small">This is the coupons and CPF payouts you receive.</p>
+      <p class="small">Coupons from your bonds <strong id="income-bonds">S$139,250</strong> plus CPF payouts <strong id="income-cpf">S$35,264</strong>. CPF is counted on top of the portfolio size above.</p>
       <p class="small">To buy the same things that <strong id="spend-now">S$150,000</strong> buys today, you need <strong id="future-spend">S$182,849</strong> in <span class="years-word">10</span> years.</p>
     </section>
 
